@@ -1,0 +1,4 @@
+Change Physical Footprint: Designator=Left analog power regulator (3.3V) Old Footprint=TO-263-5 New Footprint=TO-263-5
+Change Physical Footprint: Designator=Left digital power regulator (3.3V) Old Footprint=TO-263-5 New Footprint=TO-263-5
+Change Physical Footprint: Designator=Right analog power regulator (3.3V) Old Footprint=TO-263-5 New Footprint=TO-263-5
+Change Physical Footprint: Designator=Right digital power regulator (3.3V) Old Footprint=TO-263-5 New Footprint=TO-263-5

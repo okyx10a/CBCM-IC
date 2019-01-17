@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=D_GND Pin=X2-3
+Added Component: Designator=tie4(net_tie)
+Added Component: Designator=tie5(net_tie)
+Added Component: Designator=tie6(net_tie)
+Added Pin To Net: NetName=LA_GND Pin=tie4-1
+Added Pin To Net: NetName=LA_GND Pin=tie5-0
+Added Pin To Net: NetName=RA_GND Pin=tie5-1
+Added Pin To Net: NetName=D_GND Pin=tie6-0
+Added Pin To Net: NetName=Nettie4_0 Pin=tie4-0
+Added Pin To Net: NetName=Nettie4_0 Pin=tie6-1
+Added Pin To Net: NetName=Nettie4_0 Pin=X2-3
+Added Net: Name=Nettie4_0
+Added Member To Class: ClassName=IC common Member=Component tie4 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie5 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie6 Net Tie

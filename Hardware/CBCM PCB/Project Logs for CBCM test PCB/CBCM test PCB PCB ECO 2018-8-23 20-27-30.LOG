@@ -1,0 +1,479 @@
+Added Component: Designator=C1(CAPC1608X9N)
+Added Component: Designator=C2(CAPC1608X9N)
+Added Component: Designator=C3(CAP_GRM_188)
+Added Component: Designator=C4(CAP_GRM_188)
+Added Component: Designator=C5(CAP_GRM_188)
+Added Component: Designator=C6(CAP_GRM_188)
+Added Component: Designator=C7(CAPC1608X9N)
+Added Component: Designator=C8(CAPC1608X9N)
+Added Component: Designator=C9(CAPC1608X9N)
+Added Component: Designator=C10(CAPC1608X9N)
+Added Component: Designator=C11(CAPC1608X9N)
+Added Component: Designator=C12(CAPC1608X9N)
+Added Component: Designator=C13(CAPC1608X9N)
+Added Component: Designator=C14(CAPC1608X9N)
+Added Component: Designator=C15(CAPC1608X9N)
+Added Component: Designator=C16(CAPC1608X9N)
+Added Component: Designator=C17(CAPC1608X9N)
+Added Component: Designator=C18(CAPC1608X9N)
+Added Component: Designator=C19(CAPC1608X9N)
+Added Component: Designator=C20(CAPC1608X9N)
+Added Component: Designator=C21(CAPC1608X9N)
+Added Component: Designator=C22(CAPC1608X9N)
+Added Component: Designator=C23(CAPC1608X9N)
+Added Component: Designator=C24(CAPC1608X9N)
+Added Component: Designator=C25(CAPC1608X9N)
+Added Component: Designator=C26(CAPC1608X9N)
+Added Component: Designator=C27(CAPC1608X9N)
+Added Component: Designator=C28(CAP_GRM_188)
+Added Component: Designator=C29(CAP_GRM_188)
+Added Component: Designator=C30(CAP_GRM_188)
+Added Component: Designator=C31(CAP_GRM_188)
+Added Component: Designator=C32(CAPC1608X9N)
+Added Component: Designator=C33(CAPC1608X9N)
+Added Component: Designator=C34(CAPC1608X9N)
+Added Component: Designator=C35(CAPC1608X9N)
+Added Component: Designator=C36(CAPC1608X9N)
+Added Component: Designator=C37(CAPC1608X9N)
+Added Component: Designator=C39(CAPC1608X9N)
+Added Component: Designator=C40(CAPC1608X9N)
+Added Component: Designator=C41(CAPC1608X9N)
+Added Component: Designator=C42(CAPC1608X9N)
+Added Component: Designator=C43(CAPC1608X9N)
+Added Component: Designator=C44(CAPC1608X9N)
+Added Component: Designator=C45(CAPC1608X9N)
+Added Component: Designator=C46(CAPC1608X9N)
+Added Component: Designator=C47(CAPC1608X9N)
+Added Component: Designator=C48(CAPC1608X9N)
+Added Component: Designator=C49(CAPC1608X9N)
+Added Component: Designator=C50(CAPC1608X9N)
+Added Component: Designator=C138(CAPC1608X9N)
+Added Component: Designator=Left analog power regulator (3.3V)(KTT5_6P22X6P86)
+Added Component: Designator=Left CCO regulator(WDFN6)
+Added Component: Designator=Left digital power regulator (3.3V)(KTT5_6P22X6P86)
+Added Component: Designator=Opt-G1-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-G1(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-G2-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-G2(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-G3-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-G3(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-Nout-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-Nout(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-phi1-L(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-phi1-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-phi2-L(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-phi2-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-phi3-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-phi3(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-Sclk-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-Sclk(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-Sin-R(SOIC127P1150X330-8N)
+Added Component: Designator=Opt-Sin(SOIC127P1150X330-8N)
+Added Component: Designator=R1(RES_0816)
+Added Component: Designator=R2(RC0603N)
+Added Component: Designator=R3(RES_0816)
+Added Component: Designator=R4(RC0603N)
+Added Component: Designator=R5(RC0603N)
+Added Component: Designator=R6(RC0603N)
+Added Component: Designator=R7(RES_0816)
+Added Component: Designator=R8(RC0603N)
+Added Component: Designator=R9(RES_0816)
+Added Component: Designator=R10(RC0603N)
+Added Component: Designator=R11(RC0603N)
+Added Component: Designator=R12(RC0603N)
+Added Component: Designator=Right analog power regulator (3.3V)(KTT5_6P22X6P86)
+Added Component: Designator=Right CCO regulator(WDFN6)
+Added Component: Designator=Right digital power regulator (3.3V)(KTT5_6P22X6P86)
+Added Component: Designator=Test pin(87224-1)
+Added Pin To Net: NetName=+5 Pin=C3-2
+Added Pin To Net: NetName=+5 Pin=C4-2
+Added Pin To Net: NetName=+5 Pin=C5-2
+Added Pin To Net: NetName=+5 Pin=C28-2
+Added Pin To Net: NetName=+5 Pin=C29-2
+Added Pin To Net: NetName=+5 Pin=C30-2
+Added Pin To Net: NetName=+5 Pin=Left analog power regulator (3.3V)-2
+Added Pin To Net: NetName=+5 Pin=Left CCO regulator-4
+Added Pin To Net: NetName=+5 Pin=Left CCO regulator-6
+Added Pin To Net: NetName=+5 Pin=Left digital power regulator (3.3V)-2
+Added Pin To Net: NetName=+5 Pin=Right analog power regulator (3.3V)-2
+Added Pin To Net: NetName=+5 Pin=Right CCO regulator-4
+Added Pin To Net: NetName=+5 Pin=Right CCO regulator-6
+Added Pin To Net: NetName=+5 Pin=Right digital power regulator (3.3V)-2
+Added Net: Name=+5
+Added Pin To Net: NetName=D_GND Pin=C2-1
+Added Pin To Net: NetName=D_GND Pin=C4-1
+Added Pin To Net: NetName=D_GND Pin=C9-2
+Added Pin To Net: NetName=D_GND Pin=C11-2
+Added Pin To Net: NetName=D_GND Pin=C13-2
+Added Pin To Net: NetName=D_GND Pin=C15-2
+Added Pin To Net: NetName=D_GND Pin=C17-2
+Added Pin To Net: NetName=D_GND Pin=C19-2
+Added Pin To Net: NetName=D_GND Pin=C21-2
+Added Pin To Net: NetName=D_GND Pin=C23-2
+Added Pin To Net: NetName=D_GND Pin=C25-2
+Added Pin To Net: NetName=D_GND Pin=C27-1
+Added Pin To Net: NetName=D_GND Pin=C29-1
+Added Pin To Net: NetName=D_GND Pin=C34-2
+Added Pin To Net: NetName=D_GND Pin=C36-2
+Added Pin To Net: NetName=D_GND Pin=C40-2
+Added Pin To Net: NetName=D_GND Pin=C42-2
+Added Pin To Net: NetName=D_GND Pin=C44-2
+Added Pin To Net: NetName=D_GND Pin=C46-2
+Added Pin To Net: NetName=D_GND Pin=C48-2
+Added Pin To Net: NetName=D_GND Pin=C50-2
+Added Pin To Net: NetName=D_GND Pin=C138-2
+Added Pin To Net: NetName=D_GND Pin=Left digital power regulator (3.3V)-1
+Added Pin To Net: NetName=D_GND Pin=Left digital power regulator (3.3V)-3
+Added Pin To Net: NetName=D_GND Pin=Left digital power regulator (3.3V)-6
+Added Pin To Net: NetName=D_GND Pin=Opt-G1-5
+Added Pin To Net: NetName=D_GND Pin=Opt-G1-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-G2-5
+Added Pin To Net: NetName=D_GND Pin=Opt-G2-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-G3-5
+Added Pin To Net: NetName=D_GND Pin=Opt-G3-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-Nout-5
+Added Pin To Net: NetName=D_GND Pin=Opt-Nout-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-phi1-L-5
+Added Pin To Net: NetName=D_GND Pin=Opt-phi1-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-phi2-L-5
+Added Pin To Net: NetName=D_GND Pin=Opt-phi2-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-phi3-5
+Added Pin To Net: NetName=D_GND Pin=Opt-phi3-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-Sclk-5
+Added Pin To Net: NetName=D_GND Pin=Opt-Sclk-R-5
+Added Pin To Net: NetName=D_GND Pin=Opt-Sin-5
+Added Pin To Net: NetName=D_GND Pin=Opt-Sin-R-5
+Added Pin To Net: NetName=D_GND Pin=R4-2
+Added Pin To Net: NetName=D_GND Pin=R10-2
+Added Pin To Net: NetName=D_GND Pin=Right digital power regulator (3.3V)-1
+Added Pin To Net: NetName=D_GND Pin=Right digital power regulator (3.3V)-3
+Added Pin To Net: NetName=D_GND Pin=Right digital power regulator (3.3V)-6
+Added Net: Name=D_GND
+Added Pin To Net: NetName=G1-L Pin=Opt-G1-6
+Added Net: Name=G1-L
+Added Pin To Net: NetName=G1-R Pin=Opt-G1-R-6
+Added Net: Name=G1-R
+Added Pin To Net: NetName=G1 Pin=Opt-G1-2
+Added Pin To Net: NetName=G1 Pin=Opt-G1-R-2
+Added Net: Name=G1
+Added Pin To Net: NetName=G2-L Pin=Opt-G2-6
+Added Net: Name=G2-L
+Added Pin To Net: NetName=G2-R Pin=Opt-G2-R-6
+Added Net: Name=G2-R
+Added Pin To Net: NetName=G2 Pin=Opt-G2-2
+Added Pin To Net: NetName=G2 Pin=Opt-G2-R-2
+Added Net: Name=G2
+Added Pin To Net: NetName=G3-L Pin=Opt-G3-6
+Added Net: Name=G3-L
+Added Pin To Net: NetName=G3-R Pin=Opt-G3-R-6
+Added Net: Name=G3-R
+Added Pin To Net: NetName=G3 Pin=Opt-G3-2
+Added Pin To Net: NetName=G3 Pin=Opt-G3-R-2
+Added Net: Name=G3
+Added Pin To Net: NetName=LA_3.3 Pin=C1-2
+Added Pin To Net: NetName=LA_3.3 Pin=Left analog power regulator (3.3V)-4
+Added Pin To Net: NetName=LA_3.3 Pin=R1-1
+Added Net: Name=LA_3.3
+Added Pin To Net: NetName=LA_GND Pin=C1-1
+Added Pin To Net: NetName=LA_GND Pin=C3-1
+Added Pin To Net: NetName=LA_GND Pin=C5-1
+Added Pin To Net: NetName=LA_GND Pin=C6-1
+Added Pin To Net: NetName=LA_GND Pin=Left analog power regulator (3.3V)-1
+Added Pin To Net: NetName=LA_GND Pin=Left analog power regulator (3.3V)-3
+Added Pin To Net: NetName=LA_GND Pin=Left analog power regulator (3.3V)-6
+Added Pin To Net: NetName=LA_GND Pin=Left CCO regulator-3
+Added Pin To Net: NetName=LA_GND Pin=R2-2
+Added Pin To Net: NetName=LA_GND Pin=R6-2
+Added Net: Name=LA_GND
+Added Pin To Net: NetName=LCCO_1.85V Pin=C6-2
+Added Pin To Net: NetName=LCCO_1.85V Pin=C7-1
+Added Pin To Net: NetName=LCCO_1.85V Pin=Left CCO regulator-1
+Added Pin To Net: NetName=LCCO_1.85V Pin=R5-1
+Added Net: Name=LCCO_1.85V
+Added Pin To Net: NetName=LD_3.3 Pin=C2-2
+Added Pin To Net: NetName=LD_3.3 Pin=C9-1
+Added Pin To Net: NetName=LD_3.3 Pin=C11-1
+Added Pin To Net: NetName=LD_3.3 Pin=C13-1
+Added Pin To Net: NetName=LD_3.3 Pin=C15-1
+Added Pin To Net: NetName=LD_3.3 Pin=C17-1
+Added Pin To Net: NetName=LD_3.3 Pin=C19-1
+Added Pin To Net: NetName=LD_3.3 Pin=C21-1
+Added Pin To Net: NetName=LD_3.3 Pin=C23-1
+Added Pin To Net: NetName=LD_3.3 Pin=C25-1
+Added Pin To Net: NetName=LD_3.3 Pin=Left digital power regulator (3.3V)-4
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-G1-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-G2-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-G3-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-Nout-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-phi1-L-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-phi2-L-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-phi3-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-Sclk-8
+Added Pin To Net: NetName=LD_3.3 Pin=Opt-Sin-8
+Added Pin To Net: NetName=LD_3.3 Pin=R3-1
+Added Net: Name=LD_3.3
+Added Net: Name=NetADCH_1
+Added Net: Name=NetADCH_2
+Added Net: Name=NetADCH_3
+Added Net: Name=NetADCH_4
+Added Net: Name=NetADCH_5
+Added Net: Name=NetADCH_6
+Added Net: Name=NetADCH_7
+Added Net: Name=NetADCH_8
+Added Net: Name=NetADCL_1
+Added Net: Name=NetADCL_2
+Added Net: Name=NetADCL_3
+Added Net: Name=NetADCL_4
+Added Net: Name=NetADCL_5
+Added Net: Name=NetADCL_6
+Added Net: Name=NetADCL_7
+Added Net: Name=NetADCL_8
+Added Pin To Net: NetName=NetC7_2 Pin=C7-2
+Added Pin To Net: NetName=NetC7_2 Pin=Left CCO regulator-2
+Added Pin To Net: NetName=NetC7_2 Pin=R5-2
+Added Pin To Net: NetName=NetC7_2 Pin=R6-1
+Added Net: Name=NetC7_2
+Added Pin To Net: NetName=NetC32_2 Pin=C32-2
+Added Pin To Net: NetName=NetC32_2 Pin=R11-2
+Added Pin To Net: NetName=NetC32_2 Pin=R12-1
+Added Pin To Net: NetName=NetC32_2 Pin=Right CCO regulator-2
+Added Net: Name=NetC32_2
+Added Net: Name=NetCBCM IC_33
+Added Net: Name=NetCOMMUNICATION_1
+Added Net: Name=NetCOMMUNICATION_2
+Added Net: Name=NetCOMMUNICATION_3
+Added Net: Name=NetCOMMUNICATION_4
+Added Net: Name=NetCOMMUNICATION_5
+Added Net: Name=NetCOMMUNICATION_6
+Added Net: Name=NetCOMMUNICATION_7
+Added Net: Name=NetCOMMUNICATION_8
+Added Pin To Net: NetName=NetLeft analog power regulator (3.3V)_5 Pin=Left analog power regulator (3.3V)-5
+Added Pin To Net: NetName=NetLeft analog power regulator (3.3V)_5 Pin=R1-2
+Added Pin To Net: NetName=NetLeft analog power regulator (3.3V)_5 Pin=R2-1
+Added Net: Name=NetLeft analog power regulator (3.3V)_5
+Added Pin To Net: NetName=NetLeft digital power regulator (3.3V)_5 Pin=Left digital power regulator (3.3V)-5
+Added Pin To Net: NetName=NetLeft digital power regulator (3.3V)_5 Pin=R3-2
+Added Pin To Net: NetName=NetLeft digital power regulator (3.3V)_5 Pin=R4-1
+Added Net: Name=NetLeft digital power regulator (3.3V)_5
+Added Net: Name=NetPOWER_1
+Added Net: Name=NetPOWER_2
+Added Net: Name=NetPOWER_3
+Added Net: Name=NetPOWER_5
+Added Net: Name=NetPOWER_6
+Added Net: Name=NetPOWER_7
+Added Net: Name=NetPOWER_8
+Added Net: Name=NetPWMH_1
+Added Net: Name=NetPWMH_2
+Added Net: Name=NetPWMH_4
+Added Net: Name=NetPWMH_5
+Added Net: Name=NetPWMH_6
+Added Net: Name=NetPWMH_7
+Added Net: Name=NetPWMH_8
+Added Net: Name=NetPWMH_9
+Added Net: Name=NetPWMH_10
+Added Net: Name=NetPWML_1
+Added Net: Name=NetPWML_2
+Added Net: Name=NetPWML_3
+Added Net: Name=NetPWML_4
+Added Net: Name=NetPWML_5
+Added Net: Name=NetPWML_6
+Added Net: Name=NetPWML_7
+Added Net: Name=NetPWML_8
+Added Pin To Net: NetName=NetR7_2 Pin=R7-2
+Added Pin To Net: NetName=NetR7_2 Pin=R8-1
+Added Pin To Net: NetName=NetR7_2 Pin=Right analog power regulator (3.3V)-5
+Added Net: Name=NetR7_2
+Added Pin To Net: NetName=NetR9_2 Pin=R9-2
+Added Pin To Net: NetName=NetR9_2 Pin=R10-1
+Added Pin To Net: NetName=NetR9_2 Pin=Right digital power regulator (3.3V)-5
+Added Net: Name=NetR9_2
+Added Net: Name=NetXIO_1
+Added Net: Name=NetXIO_2
+Added Net: Name=NetXIO_4
+Added Net: Name=NetXIO_6
+Added Net: Name=NetXIO_7
+Added Net: Name=NetXIO_8
+Added Net: Name=NetXIO_9
+Added Net: Name=NetXIO_10
+Added Net: Name=NetXIO_11
+Added Net: Name=NetXIO_12
+Added Net: Name=NetXIO_13
+Added Net: Name=NetXIO_14
+Added Net: Name=NetXIO_16
+Added Net: Name=NetXIO_18
+Added Net: Name=NetXIO_20
+Added Net: Name=NetXIO_21
+Added Net: Name=NetXIO_22
+Added Net: Name=NetXIO_23
+Added Net: Name=NetXIO_24
+Added Net: Name=NetXIO_25
+Added Net: Name=NetXIO_26
+Added Net: Name=NetXIO_27
+Added Net: Name=NetXIO_28
+Added Net: Name=NetXIO_30
+Added Net: Name=NetXIO_32
+Added Net: Name=NetXIO_34
+Added Pin To Net: NetName=NOUT-L Pin=Opt-Nout-6
+Added Net: Name=NOUT-L
+Added Pin To Net: NetName=NOUT-R Pin=Opt-Nout-R-6
+Added Net: Name=NOUT-R
+Added Pin To Net: NetName=NOUT Pin=Opt-Nout-2
+Added Pin To Net: NetName=NOUT Pin=Opt-Nout-R-2
+Added Net: Name=NOUT
+Added Pin To Net: NetName=PHI1-L Pin=Opt-phi1-L-6
+Added Net: Name=PHI1-L
+Added Pin To Net: NetName=PHI1-R Pin=Opt-phi1-R-6
+Added Net: Name=PHI1-R
+Added Pin To Net: NetName=PHI1 Pin=Opt-phi1-L-2
+Added Pin To Net: NetName=PHI1 Pin=Opt-phi1-R-2
+Added Net: Name=PHI1
+Added Pin To Net: NetName=PHI2-L Pin=Opt-phi2-L-6
+Added Net: Name=PHI2-L
+Added Pin To Net: NetName=PHI2-R Pin=Opt-phi2-R-6
+Added Net: Name=PHI2-R
+Added Pin To Net: NetName=PHI2 Pin=Opt-phi2-L-2
+Added Pin To Net: NetName=PHI2 Pin=Opt-phi2-R-2
+Added Net: Name=PHI2
+Added Pin To Net: NetName=PHI3-L Pin=Opt-phi3-6
+Added Net: Name=PHI3-L
+Added Pin To Net: NetName=PHI3-R Pin=Opt-phi3-R-6
+Added Net: Name=PHI3-R
+Added Pin To Net: NetName=PHI3 Pin=Opt-phi3-2
+Added Pin To Net: NetName=PHI3 Pin=Opt-phi3-R-2
+Added Net: Name=PHI3
+Added Pin To Net: NetName=RA_3.3 Pin=C26-2
+Added Pin To Net: NetName=RA_3.3 Pin=R7-1
+Added Pin To Net: NetName=RA_3.3 Pin=Right analog power regulator (3.3V)-4
+Added Net: Name=RA_3.3
+Added Pin To Net: NetName=RA_GND Pin=C26-1
+Added Pin To Net: NetName=RA_GND Pin=C28-1
+Added Pin To Net: NetName=RA_GND Pin=C30-1
+Added Pin To Net: NetName=RA_GND Pin=C31-1
+Added Pin To Net: NetName=RA_GND Pin=R8-2
+Added Pin To Net: NetName=RA_GND Pin=R12-2
+Added Pin To Net: NetName=RA_GND Pin=Right analog power regulator (3.3V)-1
+Added Pin To Net: NetName=RA_GND Pin=Right analog power regulator (3.3V)-3
+Added Pin To Net: NetName=RA_GND Pin=Right analog power regulator (3.3V)-6
+Added Pin To Net: NetName=RA_GND Pin=Right CCO regulator-3
+Added Net: Name=RA_GND
+Added Pin To Net: NetName=RCCO_1.85V Pin=C31-2
+Added Pin To Net: NetName=RCCO_1.85V Pin=C32-1
+Added Pin To Net: NetName=RCCO_1.85V Pin=R11-1
+Added Pin To Net: NetName=RCCO_1.85V Pin=Right CCO regulator-1
+Added Net: Name=RCCO_1.85V
+Added Pin To Net: NetName=RD_3.3 Pin=C27-2
+Added Pin To Net: NetName=RD_3.3 Pin=C34-1
+Added Pin To Net: NetName=RD_3.3 Pin=C36-1
+Added Pin To Net: NetName=RD_3.3 Pin=C40-1
+Added Pin To Net: NetName=RD_3.3 Pin=C42-1
+Added Pin To Net: NetName=RD_3.3 Pin=C44-1
+Added Pin To Net: NetName=RD_3.3 Pin=C46-1
+Added Pin To Net: NetName=RD_3.3 Pin=C48-1
+Added Pin To Net: NetName=RD_3.3 Pin=C50-1
+Added Pin To Net: NetName=RD_3.3 Pin=C138-1
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-G1-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-G2-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-G3-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-Nout-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-phi1-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-phi2-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-phi3-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-Sclk-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=Opt-Sin-R-8
+Added Pin To Net: NetName=RD_3.3 Pin=R9-1
+Added Pin To Net: NetName=RD_3.3 Pin=Right digital power regulator (3.3V)-4
+Added Net: Name=RD_3.3
+Added Pin To Net: NetName=SCLK-L Pin=Opt-Sclk-6
+Added Net: Name=SCLK-L
+Added Pin To Net: NetName=SCLK-R Pin=Opt-Sclk-R-6
+Added Net: Name=SCLK-R
+Added Pin To Net: NetName=SCLK Pin=Opt-Sclk-2
+Added Pin To Net: NetName=SCLK Pin=Opt-Sclk-R-2
+Added Net: Name=SCLK
+Added Pin To Net: NetName=SIN-L Pin=Opt-Sin-6
+Added Net: Name=SIN-L
+Added Pin To Net: NetName=SIN-R Pin=Opt-Sin-R-6
+Added Net: Name=SIN-R
+Added Pin To Net: NetName=SIN Pin=Opt-Sin-2
+Added Pin To Net: NetName=SIN Pin=Opt-Sin-R-2
+Added Net: Name=SIN
+Added Pin To Net: NetName=UC_3.3 Pin=C8-1
+Added Pin To Net: NetName=UC_3.3 Pin=C10-1
+Added Pin To Net: NetName=UC_3.3 Pin=C12-1
+Added Pin To Net: NetName=UC_3.3 Pin=C14-1
+Added Pin To Net: NetName=UC_3.3 Pin=C16-1
+Added Pin To Net: NetName=UC_3.3 Pin=C18-1
+Added Pin To Net: NetName=UC_3.3 Pin=C20-1
+Added Pin To Net: NetName=UC_3.3 Pin=C22-1
+Added Pin To Net: NetName=UC_3.3 Pin=C24-1
+Added Pin To Net: NetName=UC_3.3 Pin=C33-1
+Added Pin To Net: NetName=UC_3.3 Pin=C35-1
+Added Pin To Net: NetName=UC_3.3 Pin=C37-1
+Added Pin To Net: NetName=UC_3.3 Pin=C39-1
+Added Pin To Net: NetName=UC_3.3 Pin=C41-1
+Added Pin To Net: NetName=UC_3.3 Pin=C43-1
+Added Pin To Net: NetName=UC_3.3 Pin=C45-1
+Added Pin To Net: NetName=UC_3.3 Pin=C47-1
+Added Pin To Net: NetName=UC_3.3 Pin=C49-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-G1-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-G1-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-G2-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-G2-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-G3-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-G3-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-Nout-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-Nout-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-phi1-L-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-phi1-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-phi2-L-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-phi2-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-phi3-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-phi3-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-Sclk-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-Sclk-R-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-Sin-1
+Added Pin To Net: NetName=UC_3.3 Pin=Opt-Sin-R-1
+Added Net: Name=UC_3.3
+Added Pin To Net: NetName=UC_GND Pin=C8-2
+Added Pin To Net: NetName=UC_GND Pin=C10-2
+Added Pin To Net: NetName=UC_GND Pin=C12-2
+Added Pin To Net: NetName=UC_GND Pin=C14-2
+Added Pin To Net: NetName=UC_GND Pin=C16-2
+Added Pin To Net: NetName=UC_GND Pin=C18-2
+Added Pin To Net: NetName=UC_GND Pin=C20-2
+Added Pin To Net: NetName=UC_GND Pin=C22-2
+Added Pin To Net: NetName=UC_GND Pin=C24-2
+Added Pin To Net: NetName=UC_GND Pin=C33-2
+Added Pin To Net: NetName=UC_GND Pin=C35-2
+Added Pin To Net: NetName=UC_GND Pin=C37-2
+Added Pin To Net: NetName=UC_GND Pin=C39-2
+Added Pin To Net: NetName=UC_GND Pin=C41-2
+Added Pin To Net: NetName=UC_GND Pin=C43-2
+Added Pin To Net: NetName=UC_GND Pin=C45-2
+Added Pin To Net: NetName=UC_GND Pin=C47-2
+Added Pin To Net: NetName=UC_GND Pin=C49-2
+Added Pin To Net: NetName=UC_GND Pin=Opt-G1-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-G1-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-G2-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-G2-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-G3-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-G3-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-Nout-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-Nout-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-phi1-L-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-phi1-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-phi2-L-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-phi2-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-phi3-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-phi3-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-Sclk-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-Sclk-R-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-Sin-4
+Added Pin To Net: NetName=UC_GND Pin=Opt-Sin-R-4
+Added Net: Name=UC_GND
+Added Class: Name=IC common
+Added Class: Name=IC left
+Added Class: Name=IC right
+Added Room: Name=IC common
+Added Room: Name=IC left
+Added Room: Name=IC right

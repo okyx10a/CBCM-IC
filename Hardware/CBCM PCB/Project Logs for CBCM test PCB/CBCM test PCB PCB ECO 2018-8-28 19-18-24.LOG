@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=LA_GND Pin=Left CCO regulator-GND
+Removed Pin From Net: NetName=RA_GND Pin=Right CCO regulator-GND

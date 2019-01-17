@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: CBCM test PCB.PcbDoc   2018/10/31  15:03:09
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : CBCM test PCB.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        10mil (0.254mm)          Round          74               16.49 Inch (418.79 mm)
+T2        20mil (0.508mm)          Round          8                2.82 Inch (71.54 mm)
+T3        23.62mil (0.59995mm)     Round          85               10.79 Inch (274.05 mm)
+T4        28mil (0.7112mm)         Round          16               3.68 Inch (93.50 mm)
+T5        30mil (0.762mm)          Round          19               9.33 Inch (237.02 mm)
+T6        33.46mil (0.84988mm)     Round          18               3.90 Inch (99.07 mm)
+T7        37.4mil (0.94996mm)      Round          42               6.45 Inch (163.85 mm)
+T8        38mil (0.9652mm)         Round          1                0.00 Inch (0.00 mm)
+T9        51.18mil (1.29997mm)     Round          9                0.60 Inch (15.36 mm)
+---------------------------------------------------------------------------
+Totals                                            272              54.06 Inch (1373.18 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

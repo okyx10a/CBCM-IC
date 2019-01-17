@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=Left analog power regulator (3.3V) Old Footprint=KTT5_6P22X6P86 New Footprint=TO-263-5
+Change Component Footprint: Designator=Left digital power regulator (3.3V) Old Footprint=KTT5_6P22X6P86 New Footprint=TO-263-5
+Change Component Footprint: Designator=Right analog power regulator (3.3V) Old Footprint=KTT5_6P22X6P86 New Footprint=TO-263-5
+Change Component Footprint: Designator=Right digital power regulator (3.3V) Old Footprint=KTT5_6P22X6P86 New Footprint=TO-263-5
+Added Member To Class: ClassName=IC left Member=Component Left analog power regulator (3.3V) TPS75901KTTR

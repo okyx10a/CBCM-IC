@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [CBCM test PCB.PrjPCB]
+   Generated File[CBCM test PCB.TXT]
+   Generated File[CBCM test PCB.LDP]
+   Generated File[CBCM test PCB.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 15:03:09 On 2018/10/31

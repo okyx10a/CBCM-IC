@@ -1,0 +1,72 @@
+Change Component DesignItemId : Designator=Opt-G1-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-G1-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-G2-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-G2-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-G3-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-G3-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-Nout-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-Nout-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-phi1-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-phi1-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-phi2-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-phi2-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-phi3-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-phi3-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-Sclk-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-Sclk-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-Sin-L Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component DesignItemId : Designator=Opt-Sin-R Old DesignItemId=ACPL-072L-500E New DesignItemId=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-G1-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-G1-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-G2-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-G2-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-G3-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-G3-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-Nout-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-Nout-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-phi1-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-phi1-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-phi2-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-phi2-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-phi3-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-phi3-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-Sclk-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-Sclk-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-Sin-L Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Comment : Designator=Opt-Sin-R Old Comment=ACPL-072L-500E New Comment=ADUM210N1BRIZ
+Change Component Description : Designator=Opt-G1-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-G1-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-G2-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-G2-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-G3-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-G3-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-Nout-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-Nout-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-phi1-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-phi1-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-phi2-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-phi2-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-phi3-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-phi3-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-Sclk-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-Sclk-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-Sin-L Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Description : Designator=Opt-Sin-R Old Description=Optocoupler Logic-Out Push-Pull Logic, Buffer-IN 1-CH 8-Pin SOIC T/R New Description=Digital isolator 1-CH 8-Pin SOIC T/R
+Change Component Library : Designator=Opt-G1-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-G1-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-G2-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-G2-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-G3-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-G3-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-Nout-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-Nout-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-phi1-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-phi1-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-phi2-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-phi2-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-phi3-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-phi3-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-Sclk-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-Sclk-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-Sin-L Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib
+Change Component Library : Designator=Opt-Sin-R Old Library=ACPL-072L-500E.SchLib New Library=ADUM210N1BRIZ.SchLib

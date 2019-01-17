@@ -1,0 +1,42 @@
+Bill of Material for 
+On 2018/10/26 at 18:34:54
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ *                   POWERSUPPLY_DC-21MM    1    X2                                                
+ 10x1F-H8.5          1X10             1    PWMH                                              
+ 18x2F-H8.5          2X18             1    XIO                                               
+ 3x2M                2X03             1    SPI                                               
+ 87224-1             87224-1          1    J1                           Imported             
+ 8x1F-H8.5           1X08             1    POWER                                             
+ ADUM210N1BRIZ       SOP8            18    Opt-G1-L, Opt-G1-R, Opt-G2-L Digital isolator 1-CH 8-Pin SOIC T/R 
+                                           Opt-G2-R, Opt-G3-L, Opt-G3-R
+                                           Opt-Nout-L, Opt-Nout-R
+                                           Opt-phi1-L, Opt-phi1-R
+                                           Opt-phi2-L, Opt-phi2-R
+                                           Opt-phi3-L, Opt-phi3-R
+                                           Opt-Sclk-L, Opt-Sclk-R
+                                           Opt-Sin-L, Opt-Sin-R
+ C                   CAPC1608X9N     19    C27, C33, C34, C35, C36, C37 Multilayer Ceramic Capacitors - 47uF 4V X5R 20% Pad SMD 0603 85C T/R 
+                                           C38, C39, C40, C41, C42, C43
+                                           C44, C45, C46, C47, C48, C49
+                                           C50
+ C1                  CAPC1608X9N      2    C7, C32                      Multilayer Ceramic Capacitor, GRM Series, 0.01 F, 5%, C0G / NP0, 50 V, 0603 [1608 Metric] 
+ CBCM IC             PGA85x11         1    CBCM IC                                           
+ Cin                 CAP_GRM_188      6    C3, C4, C5, C28, C29, C30    Imported             
+ Cin                 CAPC1608X9N      9    C8, C10, C12, C14, C16, C18  Multilayer Ceramic Capacitor, GRM Series, 0.01 F, 5%, C0G / NP0, 50 V, 0603 [1608 Metric] 
+                                           C20, C22, C24
+ Cout                CAP_GRM_188      2    C6, C31                      Imported             
+ Cout                CAPC1608X9N     12    C1, C2, C9, C11, C13, C15    Multilayer Ceramic Capacitors - 47uF 4V X5R 20% Pad SMD 0603 85C T/R 
+                                           C17, C19, C21, C23, C25, C26
+ NCP705MTADJTCG      WDFN6            2    Left CCO regulator           500 mA, Ultra-Low  Quiescent Current, IQ 13 A,  Ultra-Low Noise, LDO  Voltage Regulator 
+                                           Right CCO regulator
+ R                   RC0603N          2    R5, R6                       Imported             
+ R1                  RC0603N          1    R11                          Imported             
+ R1                  RES_0816         4    R1, R3, R7, R9               Imported             
+ R2                  RC0603N          5    R2, R4, R8, R10, R12         Imported             
+ TPS75901KTTR        TO-263-5         4                                 Imported             
+                                           Left analog power regulator (3.3V)
+                                           Left digital power regulator (3.3V)
+                                           Right analog power regulator (3.3V)
+                                           Right digital power regulator (3.3V)

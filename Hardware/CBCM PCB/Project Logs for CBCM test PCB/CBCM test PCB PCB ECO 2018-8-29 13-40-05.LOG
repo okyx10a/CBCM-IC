@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=LA_GND Pin=Left CCO regulator-GND
+Removed Pin From Net: NetName=RA_GND Pin=Right CCO regulator-GND
+Removed Pin From Net: NetName=LA_GND Pin=X2-4
+Removed Pin From Net: NetName=RA_GND Pin=X2-5
+Removed Pin From Net: NetName=LA_GND Pin=X2-6
+Removed Pin From Net: NetName=RA_GND Pin=X2-7
+Added Component: Designator=tie1(Net Tie)
+Added Component: Designator=tie2(Net Tie)
+Added Component: Designator=tie3(Net Tie)
+Added Component: Designator=tie4(Net Tie)
+Added Pin To Net: NetName=LA_GND Pin=tie1-1
+Added Pin To Net: NetName=RA_GND Pin=tie1-2
+Added Pin To Net: NetName=RA_GND Pin=tie2-1
+Added Pin To Net: NetName=D_GND Pin=tie3-1
+Added Pin To Net: NetName=RA_GND Pin=tie3-2
+Added Pin To Net: NetName=RA_GND Pin=tie4-1
+Added Pin To Net: NetName=LA_GND Pin=tie4-2
+Added Member To Class: ClassName=IC common Member=Component tie1 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie2 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie3 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie4 Net Tie

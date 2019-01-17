@@ -1,0 +1,31 @@
+Change Component DesignItemId : Designator=CBCM IC Old DesignItemId=Component_1 New DesignItemId=CBCM IC
+Added Pin To Net: NetName=RA_3.3 Pin=CBCM IC-H1
+Added Pin To Net: NetName=RA_GND Pin=CBCM IC-H2
+Added Pin To Net: NetName=LA_3.3 Pin=CBCM IC-H10
+Added Pin To Net: NetName=LA_GND Pin=CBCM IC-H11
+Added Pin To Net: NetName=RCCO_1.85V Pin=CBCM IC-J1
+Added Pin To Net: NetName=RD_3.3 Pin=CBCM IC-J2
+Added Pin To Net: NetName=G2-R Pin=CBCM IC-J5
+Added Pin To Net: NetName=RA_3.3 Pin=CBCM IC-J6
+Added Pin To Net: NetName=NetCBCM IC_33 Pin=CBCM IC-J7
+Added Pin To Net: NetName=LD_3.3 Pin=CBCM IC-J10
+Added Pin To Net: NetName=LCCO_1.85V Pin=CBCM IC-J11
+Added Pin To Net: NetName=NOUT-R Pin=CBCM IC-K1
+Added Pin To Net: NetName=PHI1-R Pin=CBCM IC-K4
+Added Pin To Net: NetName=G1-R Pin=CBCM IC-K5
+Added Pin To Net: NetName=SIN-R Pin=CBCM IC-K6
+Added Pin To Net: NetName=SCLK-L Pin=CBCM IC-K7
+Added Pin To Net: NetName=G3-L Pin=CBCM IC-K8
+Added Pin To Net: NetName=PHI3-L Pin=CBCM IC-K9
+Added Pin To Net: NetName=D_GND Pin=CBCM IC-K10
+Added Pin To Net: NetName=NOUT-L Pin=CBCM IC-K11
+Added Pin To Net: NetName=RA_GND Pin=CBCM IC-L1
+Added Pin To Net: NetName=PHI3-R Pin=CBCM IC-L2
+Added Pin To Net: NetName=PHI2-R Pin=CBCM IC-L3
+Added Pin To Net: NetName=G3-R Pin=CBCM IC-L4
+Added Pin To Net: NetName=SCLK-R Pin=CBCM IC-L5
+Added Pin To Net: NetName=G1-L Pin=CBCM IC-L6
+Added Pin To Net: NetName=SIN-L Pin=CBCM IC-L7
+Added Pin To Net: NetName=G2-L Pin=CBCM IC-L8
+Added Pin To Net: NetName=PHI1-L Pin=CBCM IC-L9
+Added Pin To Net: NetName=PHI2-L Pin=CBCM IC-L10

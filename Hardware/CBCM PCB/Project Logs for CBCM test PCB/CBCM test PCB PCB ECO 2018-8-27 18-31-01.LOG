@@ -1,0 +1,48 @@
+Removed Pin From Net: NetName=D_GND Pin=C1-1
+Removed Pin From Net: NetName=D_GND Pin=C3-1
+Removed Pin From Net: NetName=D_GND Pin=C5-1
+Removed Pin From Net: NetName=D_GND Pin=C6-1
+Removed Pin From Net: NetName=D_GND Pin=C26-1
+Removed Pin From Net: NetName=D_GND Pin=C28-1
+Removed Pin From Net: NetName=D_GND Pin=C30-1
+Removed Pin From Net: NetName=D_GND Pin=C31-1
+Removed Pin From Net: NetName=D_GND Pin=CBCM IC-H2
+Removed Pin From Net: NetName=D_GND Pin=CBCM IC-H11
+Removed Pin From Net: NetName=D_GND Pin=CBCM IC-L1
+Removed Pin From Net: NetName=D_GND Pin=Left analog power regulator (3.3V)-1
+Removed Pin From Net: NetName=D_GND Pin=Left analog power regulator (3.3V)-3
+Removed Pin From Net: NetName=D_GND Pin=Left analog power regulator (3.3V)-6
+Removed Pin From Net: NetName=D_GND Pin=Left CCO regulator-3
+Removed Pin From Net: NetName=D_GND Pin=R2-2
+Removed Pin From Net: NetName=D_GND Pin=R6-2
+Removed Pin From Net: NetName=D_GND Pin=R8-2
+Removed Pin From Net: NetName=D_GND Pin=R12-2
+Removed Pin From Net: NetName=D_GND Pin=Right analog power regulator (3.3V)-1
+Removed Pin From Net: NetName=D_GND Pin=Right analog power regulator (3.3V)-3
+Removed Pin From Net: NetName=D_GND Pin=Right analog power regulator (3.3V)-6
+Removed Pin From Net: NetName=D_GND Pin=Right CCO regulator-3
+Added Pin To Net: NetName=LA_GND Pin=C1-1
+Added Pin To Net: NetName=LA_GND Pin=C3-1
+Added Pin To Net: NetName=LA_GND Pin=C5-1
+Added Pin To Net: NetName=LA_GND Pin=C6-1
+Added Pin To Net: NetName=LA_GND Pin=CBCM IC-H11
+Added Pin To Net: NetName=LA_GND Pin=Left analog power regulator (3.3V)-1
+Added Pin To Net: NetName=LA_GND Pin=Left analog power regulator (3.3V)-3
+Added Pin To Net: NetName=LA_GND Pin=Left analog power regulator (3.3V)-6
+Added Pin To Net: NetName=LA_GND Pin=Left CCO regulator-3
+Added Pin To Net: NetName=LA_GND Pin=R2-2
+Added Pin To Net: NetName=LA_GND Pin=R6-2
+Added Net: Name=LA_GND
+Added Pin To Net: NetName=RA_GND Pin=C26-1
+Added Pin To Net: NetName=RA_GND Pin=C28-1
+Added Pin To Net: NetName=RA_GND Pin=C30-1
+Added Pin To Net: NetName=RA_GND Pin=C31-1
+Added Pin To Net: NetName=RA_GND Pin=CBCM IC-H2
+Added Pin To Net: NetName=RA_GND Pin=CBCM IC-L1
+Added Pin To Net: NetName=RA_GND Pin=R8-2
+Added Pin To Net: NetName=RA_GND Pin=R12-2
+Added Pin To Net: NetName=RA_GND Pin=Right analog power regulator (3.3V)-1
+Added Pin To Net: NetName=RA_GND Pin=Right analog power regulator (3.3V)-3
+Added Pin To Net: NetName=RA_GND Pin=Right analog power regulator (3.3V)-6
+Added Pin To Net: NetName=RA_GND Pin=Right CCO regulator-3
+Added Net: Name=RA_GND

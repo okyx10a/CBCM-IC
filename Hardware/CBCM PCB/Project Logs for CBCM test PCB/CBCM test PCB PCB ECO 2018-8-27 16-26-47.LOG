@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NOUT Pin=Opt-Nout-L-2
+Removed Pin From Net: NetName=NOUT-L Pin=Opt-Nout-L-6
+Removed Pin From Net: NetName=NOUT-R Pin=Opt-Nout-R-6
+Removed Pin From Net: NetName=NOUT-R Pin=XIO-2
+Added Pin To Net: NetName=NOUT-L Pin=Opt-Nout-L-2
+Added Pin To Net: NetName=NOUT Pin=Opt-Nout-L-6
+Added Pin To Net: NetName=NOUT-R Pin=Opt-Nout-R-2
+Added Pin To Net: NetName=NOUT_TEST Pin=Opt-Nout-R-6
+Added Pin To Net: NetName=NOUT_TEST Pin=XIO-2
+Added Net: Name=NOUT_TEST

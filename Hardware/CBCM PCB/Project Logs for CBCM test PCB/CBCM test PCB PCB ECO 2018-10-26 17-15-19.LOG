@@ -1,0 +1,24 @@
+Added Component: Designator=tie1(net_tie)
+Added Component: Designator=tie2(net_tie)
+Added Component: Designator=tie3(net_tie)
+Added Component: Designator=tie4(net_tie)
+Added Component: Designator=tie5(net_tie)
+Added Component: Designator=tie6(net_tie)
+Added Pin To Net: NetName=LA_GND Pin=tie1-0
+Added Pin To Net: NetName=Nettie1_1 Pin=tie1-1
+Added Pin To Net: NetName=RA_GND Pin=tie2-0
+Added Pin To Net: NetName=LA_GND Pin=tie2-1
+Added Pin To Net: NetName=D_GND Pin=tie3-0
+Added Pin To Net: NetName=Nettie1_1 Pin=tie3-1
+Added Pin To Net: NetName=Nettie4_0 Pin=tie4-0
+Added Pin To Net: NetName=LA_GND Pin=tie4-1
+Added Pin To Net: NetName=LA_GND Pin=tie5-0
+Added Pin To Net: NetName=RA_GND Pin=tie5-1
+Added Pin To Net: NetName=D_GND Pin=tie6-0
+Added Pin To Net: NetName=Nettie4_0 Pin=tie6-1
+Added Member To Class: ClassName=IC common Member=Component tie1 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie2 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie3 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie4 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie5 Net Tie
+Added Member To Class: ClassName=IC common Member=Component tie6 Net Tie

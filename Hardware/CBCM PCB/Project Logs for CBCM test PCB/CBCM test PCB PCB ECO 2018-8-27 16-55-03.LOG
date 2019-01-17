@@ -1,0 +1,7 @@
+Added Component: Designator=J1(87224-1)
+Added Pin To Net: NetName=NetCBCM IC_33 Pin=CBCM IC-J7
+Added Pin To Net: NetName=NetCBCM IC_33 Pin=J1-1
+Added Net: Name=NetCBCM IC_33
+Added Pin To Net: NetName=NetXIO_1 Pin=XIO-1
+Added Net: Name=NetXIO_1
+Added Member To Class: ClassName=IC common Member=Component J1 87224-1

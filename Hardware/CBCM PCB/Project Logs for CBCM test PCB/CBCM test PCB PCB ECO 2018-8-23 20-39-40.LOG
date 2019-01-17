@@ -1,0 +1,10 @@
+Added Component: Designator=SPI(2X03)
+Added Component: Designator=X2(POWERSUPPLY_DC-21MM)
+Added Pin To Net: NetName=PHI3 Pin=SPI-3
+Added Pin To Net: NetName=NOUT Pin=SPI-4
+Added Pin To Net: NetName=UC_GND Pin=SPI-6
+Added Pin To Net: NetName=UC_GND Pin=X2-1
+Added Pin To Net: NetName=+5 Pin=X2-2
+Added Pin To Net: NetName=UC_GND Pin=X2-3
+Added Member To Class: ClassName=IC common Member=Component SPI 3x2M
+Added Member To Class: ClassName=IC common Member=Component X2 *

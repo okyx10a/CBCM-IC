@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: CBCM test PCB.GBR   2018/10/31  15:02:01
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTL                Top Layer                               
+.G1                 Power                                   
+.G2                 Ground                                  
+.GBL                Bottom Layer                            
+.GTO                Top Overlay                             
+.GTS                Top Solder                              
+.GBS                Bottom Solder                           
+.GBO                Bottom Overlay                          
+.GM1                Mechanical 1                            
+.GM4                Mechanical 4                            
+.GM13               Mechanical 13                           
+.GM15               Mechanical 15                           
+.GKO                Keep-Out Layer                          
+.GD1                Drill Drawing                           
+.GG1                Drill Guide                             
+------------------------------------------------------------------------------------------

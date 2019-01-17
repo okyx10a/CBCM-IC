@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=D_GND Pin=tie3-1
+Removed Pin From Net: NetName=LA_GND Pin=tie4-2
+Removed Member From Class: ClassName=IC common Member=tie2
+Removed Member From Class: ClassName=IC common Member=tie3
+Removed Member From Class: ClassName=IC common Member=tie4
+Added Pin To Net: NetName=LA_GND Pin=C26-1
+Added Pin To Net: NetName=LA_GND Pin=C28-1
+Added Pin To Net: NetName=LA_GND Pin=C30-1
+Added Pin To Net: NetName=LA_GND Pin=C31-1
+Added Pin To Net: NetName=LA_GND Pin=CBCM IC-H2
+Added Pin To Net: NetName=LA_GND Pin=CBCM IC-L1
+Added Pin To Net: NetName=LA_GND Pin=R8-2
+Added Pin To Net: NetName=LA_GND Pin=R12-2
+Added Pin To Net: NetName=LA_GND Pin=Right analog power regulator (3.3V)-1
+Added Pin To Net: NetName=LA_GND Pin=Right analog power regulator (3.3V)-3
+Added Pin To Net: NetName=LA_GND Pin=Right analog power regulator (3.3V)-6
+Added Pin To Net: NetName=LA_GND Pin=Right CCO regulator-3
