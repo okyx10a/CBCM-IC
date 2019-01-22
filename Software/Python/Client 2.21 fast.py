@@ -1,8 +1,9 @@
 import serial
 import time
 import sys
+import struct
 import matplotlib.pyplot as plt
-N_sample = 1000
+N_sample = 1000  
 
 arduino = serial.Serial('COM6',baudrate = 115200, timeout=1)
 print("port opened on " + arduino.name+"\n")
@@ -10,15 +11,15 @@ print("port opened on " + arduino.name+"\n")
 while 1:
     arduino.reset_input_buffer()
     arduino.reset_output_buffer()
-    calseq = input("1) \"W#######\" for input calibration sequence\n2) \"G###\" for changing CCO resolution\n3) \"complete test\" for a reading all output for each input ranging from 0-127\n4) \"quit\" to quit program. \nPlease input your command:")
+    calseq = input("1) \"W#######\" for input calibration sequence\n2) \"G###\" for changing CCO resolution\n3) \"complete test\" for a reading all output for each input ranging from 0-127\n4) \"S###\"to change the number of samples for each calibration input\n5) \"quit\" to quit program. \nPlease input your command:")
     if calseq == "quit":
         arduino.close()
         sys.exit()
         
     elif calseq == "complete test":
-        output = [None]*127*N_sample
+        output = [None]*128*N_sample
         try:
-            for x in range(127):
+            for x in range(128):
                 cmd = "W"+str(format(x,'07b'))
                 arduino.write(cmd.encode())
                 cmd = "R"
@@ -33,7 +34,7 @@ while 1:
             plt.plot(output)
             plt.show()
             result = list()
-            for i in range(127):
+            for i in range(128):
                 result.append(sum(output[i*N_sample:i*N_sample+N_sample])/N_sample)
             plt.plot(result,'bo')
             plt.show()
@@ -50,7 +51,7 @@ while 1:
             plot(output)
             pass          
     elif calseq[0] == "G" :
-        arduino.write(calseq[1:3].encode())
+        arduino.write(calseq[1:4].encode())
         
     elif calseq[0] == "W" :
         arduino.write(calseq.encode())
@@ -71,6 +72,15 @@ while 1:
         for item in output:
             f.write("%s\n" % item)
         f.close()
-    
+    elif calseq[0] == "S":
+        arduino.write(calseq.encode())
+        #arduino.write('t'.encode())
+        
+        N_sample = int(calseq[1:])
+        print(N_sample)
+        #print(arduino.readline().decode())
+        #print("done\n")
+        print("The number of samples for each calibration input is: ")
+        print(arduino.readline().decode())
     
     

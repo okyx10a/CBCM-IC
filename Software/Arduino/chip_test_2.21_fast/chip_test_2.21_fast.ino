@@ -1,5 +1,5 @@
-short result;
-const int N_sample = 1000;
+short result = 0;
+int N_sample = 1000;
 
 void setup() {
   Serial.begin(115200);
@@ -133,6 +133,20 @@ void loop() {
     char temp = Serial.read();
     switch (temp)
     {
+      case 'S':   
+        for(int i = 0; i<4; )
+        {
+          if(Serial.available() > 0) 
+          {      
+            calin_i[i] = Serial.read();
+            i++;
+          }
+        }
+        calin_i[4] = '\0';
+        N_sample = atoi(calin_i);
+        //Serial.println(calin_i); 
+        Serial.println(N_sample); 
+        break;
       case 'W':
         for(int i = 0; i<7; )
         {
@@ -170,6 +184,7 @@ void loop() {
             i++;
            }    
         } 
+        delay(1);
         Serial.write(buf,N_sample*sizeof(short)); 
         Serial.flush();
         break;
