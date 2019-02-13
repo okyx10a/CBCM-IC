@@ -49,33 +49,33 @@ while 1:
         except KeyboardInterrupt:
             time.sleep(1)
             plot(output)
-            pass          
+            pass
+        
     elif calseq[0] == "G" :
         arduino.write(calseq[1:4].encode())
         
     elif calseq[0] == "W" :
         arduino.write(calseq.encode())
         output = [0]*N_sample
+        cmd = "R"
+        arduino.write(cmd.encode())
+        time.sleep(0.01)
+        while not arduino.in_waiting:
+            pass                 
+        temp = arduino.read(size = 2*N_sample)
         for i in range(N_sample):
-            cmd = "R"
-            arduino.write(cmd.encode())
-            time.sleep(0.01)
-            while not arduino.in_waiting:
-                pass                 
-            temp = arduino.read(size = 2*N_sample)
-            for i in range(N_sample):
-                output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-            arduino.reset_input_buffer()  
+            output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+        arduino.reset_input_buffer()  
         plt.plot(output)
         plt.show()      
         f = open("ST_records.csv","w+")
         for item in output:
             f.write("%s\n" % item)
         f.close()
+        
     elif calseq[0] == "S":
         arduino.write(calseq.encode())
         #arduino.write('t'.encode())
-        
         N_sample = int(calseq[1:])
         print(N_sample)
         #print(arduino.readline().decode())
