@@ -13,36 +13,15 @@ import sys
 import struct
 import matplotlib.pyplot as plt
 import atexit
-N_sample = 1000
+
+
 arduino = None
 
-class EmittingStream(QtCore.QObject):
-
-    textWritten = QtCore.pyqtSignal(str)
-
-    def write(self, text):
-        self.textWritten.emit(str(text))
 
 class Ui_MainWindow(object):
-
-    def __init__(self, parent=None, **kwargs):
-        # ...
-
-        # Install the custom output stream
-        sys.stdout = EmittingStream(textWritten=self.normalOutputWritten)
-
-    def __del__(self):
-        # Restore sys.stdout
-        sys.stdout = sys.__stdout__
-
-    def normalOutputWritten(self, text):
-        """Append text to the QTextEdit."""
-        # Maybe QTextEdit.append() works as well, but this is how I do it:
-        cursor = self.textEdit.textCursor()
-        cursor.movePosition(QtGui.QTextCursor.End)
-        cursor.insertText(self.cmd_line_output)
-        self.textEdit.setTextCursor(cursor)
-        self.textEdit.ensureCursorVisible()
+    
+    global N_sample
+    N_sample = 1000
     
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -156,9 +135,10 @@ class Ui_MainWindow(object):
         self.set_port_input_layout.addWidget(self.timeout_input)
         self.gen_param_layout.addLayout(self.set_port_input_layout)
                 #open port button
-        self.open_port_button = QtWidgets.QPushButton(self.general_parameters)
-        self.open_port_button.setObjectName("open_port_button")
-        self.gen_param_layout.addWidget(self.open_port_button)
+        self.port_button = QtWidgets.QPushButton(self.general_parameters)
+        self.port_button.setObjectName("port_button")
+        self.gen_param_layout.addWidget(self.port_button)
+        self.port_button.clicked.connect(self.openPort)# connect open port button handler
                 
         self.set_param_input_layout = QtWidgets.QHBoxLayout()
         self.set_param_input_layout.setObjectName("set_param_input_layout")
@@ -219,7 +199,7 @@ class Ui_MainWindow(object):
         self.set_cal_layout.addItem(spacerItem1)
         self.verticalLayout_8.addLayout(self.set_cal_layout)
 
-            ##scan calibration tab
+            #scan calibration tab
         self.tabWidget.addTab(self.set_cal, "")
         self.scan_cal = QtWidgets.QWidget()
         self.scan_cal.setObjectName("scan_cal")
@@ -271,7 +251,7 @@ class Ui_MainWindow(object):
         self.port_label.setText(_translate("MainWindow", "Port="))
         self.baudrate_label.setText(_translate("MainWindow", "Baudrate="))
         self.timeout_label.setText(_translate("MainWindow", "Timeout ="))
-        self.open_port_button.setText(_translate("MainWindow", "Open port"))
+        self.port_button.setText(_translate("MainWindow", "Open port"))
         self.num_samp_label.setText(_translate("MainWindow", "Number of samples"))
         self.res_CCO_label.setText(_translate("MainWindow", "CCO resulution"))
         self.set_param_button.setText(_translate("MainWindow", "Set parameters"))
@@ -284,50 +264,95 @@ class Ui_MainWindow(object):
 
     #open port button handler
     def openPort(self):
-        p_name = self.port_input.text()
-        b_rate = int(self.baudrate_input.text())
-        t_out = int(self.timeout_input.text())
-        arduino = serial.Serial(p_name,baudrate = b_rate, timeout = t_out)
-        print("port opened on " + arduino.name+"\n")
+        try:
+            #open port
+            p_name = self.port_input.text()   
+            b_rate = int(self.baudrate_input.text())   
+            t_out = int(self.timeout_input.text())
+            global arduino
+            arduino = serial.Serial(p_name,baudrate = b_rate, timeout = t_out)
+            text_browser_msg = "port opened on " + arduino.name + "\n"
+            self.cmd_line_output.append(text_browser_msg)
+            #change button to let it close port
+            self.port_button.clicked.disconnect()# connect close port button handler
+            self.port_button.setText("Close port")
+            self.port_button.clicked.connect(self.closePort)# connect close port button handler
+            
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            text_browser_msg = template.format(type(ex).__name__, ex.args)
+            self.cmd_line_output.append(text_browser_msg)
 
     def closePort(self):
-        arduino.close()
+        try:
+            global arduino
+            arduino.close()
+            text_browser_msg = "port closed\n"
+            print("port closed\n")
+            self.cmd_line_output.append(text_browser_msg)
+            self.port_button.clicked.disconnect()
+            self.port_button.setText("Open port")
+            self.port_button.clicked.connect(self.openPort)# connect close port button handler
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            text_browser_msg = template.format(type(ex).__name__, ex.args)
+            self.cmd_line_output.append(text_browser_msg)
         
     #set parameter button handler
-    def setParameter(self): 
-        arduino.write("G".encode())
-        arduino.write(self.res_CCO.text().encode())
-        time.sleep(0.01)
-        arduino.write("S".encode())
-        arduino.write(self.num_samp.text().encode())
-        print("The number of samples for each calibration input is: ")
-        print(arduino.readline().decode())
+    def setParameter(self):
+        global arduino
+        global N_sample
+        try:
+            arduino.reset_input_buffer()
+            arduino.write("G".encode())
+            arduino.write(self.res_CCO_input.text().encode())
+            time.sleep(0.01)
+            arduino.write("S".encode())
+            arduino.write(self.num_samp_input.text().encode())
+            N_sample = int(self.num_samp_input.text())
+            text_browser_msg = "The number of samples for each calibration input is: " + arduino.readline().decode()
+            self.cmd_line_output.append(text_browser_msg)
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            text_browser_msg = template.format(type(ex).__name__, ex.args)
+            self.cmd_line_output.append(text_browser_msg)
 
     #set calibration button handler
     def setCalibration(self):
-        arduino.write("W".encode())
-        arduino.write(self.cal_input.text().encode())
-        output = [0]*N_sample
-        cmd = "R"
-        arduino.write(cmd.encode())
-        time.sleep(0.01)
-        while not arduino.in_waiting:
-            pass                 
-        temp = arduino.read(size = 2*N_sample)
-        for i in range(N_sample):
-            output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-        arduino.reset_input_buffer()  
-        plt.plot(output)
-        plt.show()      
-        f = open("ST_records.csv","w+")
-        for item in output:
-            f.write("%s\n" % item)
-        f.close()
+        global arduino
+        global N_sample
+        try:
+            arduino.write("W".encode())
+            arduino.write(self.cal_input.text().encode())
+            output = [0]*N_sample
+            cmd = "R"
+            arduino.write(cmd.encode())
+            time.sleep(0.01)
+            while not arduino.in_waiting:
+                pass                 
+            temp = arduino.read(size = 2*N_sample)
+            for i in range(N_sample):
+                output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+            arduino.reset_input_buffer()
+            text_browser_msg = "calibration set"
+            self.cmd_line_output.append(text_browser_msg)
+            plt.plot(output)
+            plt.show()      
+            f = open("ST_records.csv","w+")
+            for item in output:
+                f.write("%s\n" % item)
+            f.close()
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            text_browser_msg = template.format(type(ex).__name__, ex.args)
+            self.cmd_line_output.append(text_browser_msg)
 
     #scan calibration button handler
     def scanCalibration(self):
-        output = [None]*128*N_sample
+        global arduino
+        global N_sample
         try:
+            output = [None]*128*N_sample
             for x in range(128):
                 cmd = "W"+str(format(x,'07b'))
                 arduino.write(cmd.encode())
@@ -339,7 +364,9 @@ class Ui_MainWindow(object):
                 temp = arduino.read(size = 2*N_sample)
                 for i in range(N_sample):
                     output[x*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-                arduino.reset_input_buffer()    
+                arduino.reset_input_buffer()
+            text_browser_msg = "scan complete"
+            self.cmd_line_output.append(text_browser_msg)
             plt.plot(output)
             plt.show()
             result = list()
@@ -355,13 +382,11 @@ class Ui_MainWindow(object):
             for item in result:
                 f.write("%s\n" % item)
             f.close()
-        except KeyboardInterrupt:
-            time.sleep(1)
-            plot(output)
-            pass
-
-
-    
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            text_browser_msg = template.format(type(ex).__name__, ex.args)
+            self.cmd_line_output.append(text_browser_msg)
+  
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -372,6 +397,6 @@ if __name__ == "__main__":
     
     #close serial port on GUI exit
     if arduino != None:
-        atexit.register(ui.closePort())
+        atexit.register(ui.closePort)
     sys.exit(app.exec_())
 
