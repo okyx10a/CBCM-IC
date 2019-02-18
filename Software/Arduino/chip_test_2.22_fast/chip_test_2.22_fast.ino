@@ -134,20 +134,12 @@ void loop() {
     switch (temp)
     {
       case 'S':
-        for (int i = 0; i < 4; )
-        {
-          if (Serial.available() > 0)
-          {
-            calin_i[i] = Serial.read();
-            i++;
-          }
-        }
-        calin_i[4] = '\0';
-        N_sample = atoi(calin_i);
-        //Serial.println(calin_i);
+      {
+        String N_sample_s = Serial.readStringUntil('\0');
+        N_sample = N_sample_s.toInt();
         Serial.println(N_sample);
-        Serial.flush();
         break;
+      }
       case 'W':
         for (int i = 0; i < 7; )
         {
@@ -157,9 +149,12 @@ void loop() {
             i++;
           }
         }
+        calin_i[7] = '\0';
+        Serial.println(calin_i);
         inputSig(calin_i);
         break;
       case 'G':
+      {
         for (int i = 0; i < 3; )
         {
           if (Serial.available() > 0)
@@ -172,7 +167,10 @@ void loop() {
           else
             digitalWrite(48 + i, LOW);
         }
+        calin_i[3] = '\0';
+        Serial.println(calin_i);
         break;
+      }
       case 'R':
         unsigned char buf[N_sample * sizeof(short)];
         for (int i = 0; i < N_sample;)
@@ -190,7 +188,7 @@ void loop() {
         Serial.flush();
         break;
       default:
-        Serial.println('\0');
+        Serial.println("Meow\0");
         break;
     }
 

@@ -12,7 +12,6 @@ import time
 import sys
 import struct
 import matplotlib.pyplot as plt
-import atexit
 
 
 arduino = None
@@ -219,7 +218,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addLayout(self.scan_cal_layout)
         self.tabWidget.addTab(self.scan_cal, "")
         self.overall_layout.addWidget(self.tabWidget)
-
+        self.tabWidget.setCurrentIndex(2)
+        
         #command line output
         self.cmd_line_output = QtWidgets.QTextBrowser(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
@@ -240,9 +240,8 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -262,6 +261,7 @@ class Ui_MainWindow(object):
         self.start_scan_botton.setText(_translate("MainWindow", "Start Scanning"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.scan_cal), _translate("MainWindow", "Scan calibration "))
 
+        
     #open port button handler
     def openPort(self):
         try:
@@ -282,13 +282,13 @@ class Ui_MainWindow(object):
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
-
+            
+    #close port button handler
     def closePort(self):
         try:
             global arduino
             arduino.close()
             text_browser_msg = "port closed\n"
-            print("port closed\n")
             self.cmd_line_output.append(text_browser_msg)
             self.port_button.clicked.disconnect()
             self.port_button.setText("Open port")
@@ -300,48 +300,62 @@ class Ui_MainWindow(object):
         
     #set parameter button handler
     def setParameter(self):
-        global arduino
-        global N_sample
         try:
+            global arduino
+            global N_sample
             arduino.reset_input_buffer()
-            arduino.write("G".encode())
-            arduino.write(self.res_CCO_input.text().encode())
-            time.sleep(0.01)
-            arduino.write("S".encode())
-            arduino.write(self.num_samp_input.text().encode())
-            N_sample = int(self.num_samp_input.text())
-            text_browser_msg = "The number of samples for each calibration input is: " + arduino.readline().decode()
-            self.cmd_line_output.append(text_browser_msg)
+            if isBinaryString(self.res_CCO_input.text()) and len(self.res_CCO_input.text())==3: 
+                cmd = "G"+self.res_CCO_input.text()
+                arduino.write(cmd.encode())
+                text_browser_msg = "The CCO resolution configuration is: " + arduino.readline().decode()
+                self.cmd_line_output.append(text_browser_msg)
+            else:
+                text_browser_msg = "Please input a 3-bit binary string as CCO resolution.\nCCO resolution not set"
+                self.cmd_line_output.append(text_browser_msg)
+            if int(self.num_samp_input.text())<2048 and int(self.num_samp_input.text())>0:
+                cmd = "S" + self.num_samp_input.text() + "\0"
+                N_sample = int(self.num_samp_input.text())
+                arduino.write(cmd.encode())       
+                text_browser_msg = "The number of samples for each calibration input is: " + arduino.readline().decode()
+                self.cmd_line_output.append(text_browser_msg)
+            else:
+                text_browser_msg = "Please input an integer between 0 and 2048 as the number of samples.\nNumber of samples not set"
+                self.cmd_line_output.append(text_browser_msg)
         except Exception as ex:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
 
     #set calibration button handler
-    def setCalibration(self):
-        global arduino
-        global N_sample
+    def setCalibration(self): 
         try:
-            arduino.write("W".encode())
-            arduino.write(self.cal_input.text().encode())
-            output = [0]*N_sample
-            cmd = "R"
-            arduino.write(cmd.encode())
-            time.sleep(0.01)
-            while not arduino.in_waiting:
-                pass                 
-            temp = arduino.read(size = 2*N_sample)
-            for i in range(N_sample):
-                output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+            global arduino
+            global N_sample
             arduino.reset_input_buffer()
-            text_browser_msg = "calibration set"
-            self.cmd_line_output.append(text_browser_msg)
-            plt.plot(output)
-            plt.show()      
-            f = open("ST_records.csv","w+")
-            for item in output:
-                f.write("%s\n" % item)
-            f.close()
+            if isBinaryString(self.cal_input.text()) and len(self.cal_input.text())==7:
+                cmd = "W" + self.cal_input.text()
+                arduino.write(cmd.encode())
+                text_browser_msg = "Set calibration to: " + arduino.readline().decode()
+                self.cmd_line_output.append(text_browser_msg)
+                output = [0]*N_sample
+                cmd = "R"
+                arduino.write(cmd.encode())
+                time.sleep(0.01)
+                while not arduino.in_waiting:
+                    pass                 
+                temp = arduino.read(size = 2*N_sample)
+                for i in range(N_sample):
+                    output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+                arduino.reset_input_buffer()
+                plt.plot(output)
+                plt.show()      
+                f = open("ST_records.csv","w+")
+                for item in output:
+                    f.write("%s\n" % item)
+                f.close()
+            else:
+                text_browser_msg = "Please input a 7-bit binary string as calibration sequence.\nCalibration not set"
+                self.cmd_line_output.append(text_browser_msg)
         except Exception as ex:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             text_browser_msg = template.format(type(ex).__name__, ex.args)
@@ -349,13 +363,19 @@ class Ui_MainWindow(object):
 
     #scan calibration button handler
     def scanCalibration(self):
-        global arduino
-        global N_sample
         try:
+            #self.start_scan_botton.setEnabled(False)
+            global arduino
+            global N_sample
+            arduino.reset_input_buffer()
+            #text_browser_msg = "scanning..."
+            #self.cmd_line_output.append(text_browser_msg)
             output = [None]*128*N_sample
             for x in range(128):
                 cmd = "W"+str(format(x,'07b'))
                 arduino.write(cmd.encode())
+                text_browser_msg = "Set calibration to: " + arduino.readline().decode()
+                self.cmd_line_output.append(text_browser_msg)
                 cmd = "R"
                 arduino.write(cmd.encode())
                 time.sleep(0.01)
@@ -382,21 +402,48 @@ class Ui_MainWindow(object):
             for item in result:
                 f.write("%s\n" % item)
             f.close()
+            self.start_scan_botton.setEnabled(True)
         except Exception as ex:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
-  
+#end of Ui_MainWindow class
+
+def isBinaryString(string): 
+    # set function convert string 
+    # into set of characters . 
+    p = set(string) 
+      
+    # declare set of '0', '1' . 
+    s = {'0', '1'} 
+      
+    # check set p is same as set s 
+    # or set p contains only '0' 
+    # or set p contains only '1' 
+    # or not, if any one conditon 
+    # is true then string is accepted 
+    # otherwise not . 
+    if s == p or p == {'0'} or p == {'1'}: 
+        return True 
+    else : 
+        return False
+    
+
+def cleanUp():
+    global arduino
+    if arduino != None:
+        arduino.close()
+        print("port closed on exit\n")
+    
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    ui.tabWidget.setCurrentIndex(0)
+    app.aboutToQuit.connect(cleanUp)
     MainWindow.show()
-    
-    #close serial port on GUI exit
-    if arduino != None:
-        atexit.register(ui.closePort)
     sys.exit(app.exec_())
+
 
