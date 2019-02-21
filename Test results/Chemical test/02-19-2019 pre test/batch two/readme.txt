@@ -1,0 +1,1 @@
+this batch dries out in 6 mintes
