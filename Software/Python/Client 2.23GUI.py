@@ -14,6 +14,7 @@ import struct
 import threading
 import queue
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 
 arduino = None
@@ -23,6 +24,7 @@ class Ui_MainWindow(object):
     
     global N_sample
     N_sample = 1000
+    
     
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -339,7 +341,7 @@ class Ui_MainWindow(object):
                 arduino.write(cmd.encode())
                 text_browser_msg = "Set calibration to: " + arduino.readline().decode()
                 self.cmd_line_output.append(text_browser_msg)
-                self.cont_readout_thread = threading.Thread(target = self.cont_readout)
+                self.cont_readout_thread = threading.Thread(target = self.data_plot)
                 self.cont_readout_thread.start()
                 self.set_cal_button.setText("Stop")
                 self.set_cal_button.clicked.disconnect(self.setCalibration)
@@ -357,38 +359,50 @@ class Ui_MainWindow(object):
     def stop(self):
         self.cont_readout_thread.join()
         self.set_cal_button.setText("Set calibration")
-        self.set_cal_button.clicked.connect(self.setCalibration)
         self.set_cal_button.clicked.disconnect(self.stop)
+        self.set_cal_button.clicked.connect(self.setCalibration)
+        
 
     #start a new thread for continuous read out
-    def cont_readout(self):
-        output = [0]*N_sample
+    def data_plot(self):
+        fig = plt.figure()
+        ax = fig.add_subplot(1,1,1)
+        ax.set_ylim(0,5000)
+        start_time = time.time()
         plot_data = queue.Queue(maxsize=100)
+        time_queue = queue.Queue(maxsize=100)
         for i in range(100):
             plot_data.put(0)
-        plot_data_list = list(plot_data.queue)
-        plt.plot(plot_data_list)
+            time_queue.put(i-100)
+        ani = animation.FuncAnimation(fig, Ui_MainWindow.cont_readout,interval = 10, fargs = (start_time,ax,plot_data,time_queue))
         plt.show()
-        while True:
-            cmd = "R"
-            arduino.write(cmd.encode())
-            time.sleep(0.01)
-            while not arduino.in_waiting:
-                pass                 
-            temp = arduino.read(size = 2*N_sample)
-            for i in range(N_sample):
-                output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-            arduino.reset_input_buffer()
-            plot_data.get()
-            plot_data.put(sum(output)/1000)
-            plot_data_list = list(plot_data.queue)
-            plt.plot(plot_data_list)
-            plt.draw()      
-            f = open("ST_records.csv","w+")
-            for item in output:
-                f.write("%s\n" % item)
-            f.close()
+        
 
+    #function that defines the graph animation
+    @staticmethod
+    def cont_readout(i,start_time,ax,plot_data,time_queue):
+        output = [0]*N_sample
+        cmd = "R"
+        arduino.write(cmd.encode())
+        while not arduino.in_waiting:
+            pass                 
+        temp = arduino.read(size = 2*N_sample)
+        for i in range(N_sample):
+            output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+        arduino.reset_input_buffer()
+        plot_data.get()
+        plot_data.put(sum(output)/1000)
+        time_queue.get()
+        time_queue.put(time.time()-start_time)
+        plot_data_list = list(plot_data.queue)
+        time_axis = list(time_queue.queue)
+        ax.clear()
+        ax.plot(time_axis,plot_data_list)
+        f = open("ST_records.csv","w+")
+        for item in output:
+            f.write("%s\n" % item)
+        f.close()
+            
     #scan calibration button handler
     def scanCalibration(self):
         try:
