@@ -409,7 +409,7 @@ class Ui_MainWindow(object):
             output[i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
         arduino.reset_input_buffer()
         plot_data.get()
-        plot_data.put(sum(output)/1000)
+        plot_data.put(sum(output)/N_sample)
         time_queue.get()
         time_queue.put(time.time()-start_time)
         plot_data_list = list(plot_data.queue)
