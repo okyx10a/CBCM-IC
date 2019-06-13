@@ -92,7 +92,7 @@ void inputSig(char testSeq[])
     delay(1);
   }
   //apply input sequences
-  for (int i = 0; i < 7 ; i++)
+  for (int i = 0; i <= 7 ; i++)
   {
     if (testSeq[i] == '0')
     {
@@ -141,7 +141,7 @@ void loop() {
         break;
       }
       case 'W':
-        for (int i = 0; i < 7; )
+        for (int i = 0; i <= 7; )
         {
           if (Serial.available() > 0)
           {
@@ -149,8 +149,8 @@ void loop() {
             i++;
           }
         }
-        calin_i[7] = '\0';
-        Serial.println(calin_i);
+        //calin_i[7] = '\0';
+        //Serial.println(calin_i);
         inputSig(calin_i);
         break;
       case 'G':
@@ -195,5 +195,3 @@ void loop() {
   }
 
 }
-
-
