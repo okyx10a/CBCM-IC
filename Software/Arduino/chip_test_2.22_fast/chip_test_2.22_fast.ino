@@ -125,7 +125,7 @@ void inputSig(char testSeq[])
 
 void loop() {
   //inputSig("11101010");
-  char calin_i[7];
+  char calin_i[8];
   //Serial.println(1);
   if (Serial.available() > 0)
   {
@@ -149,8 +149,8 @@ void loop() {
             i++;
           }
         }
-        //calin_i[7] = '\0';
-        //Serial.println(calin_i);
+        calin_i[8] = '\0';
+        Serial.println(calin_i);
         inputSig(calin_i);
         break;
       case 'G':
