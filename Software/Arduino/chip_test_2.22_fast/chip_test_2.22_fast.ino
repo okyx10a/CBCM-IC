@@ -92,7 +92,7 @@ void inputSig(char testSeq[])
     delay(1);
   }
   //apply input sequences
-  for (int i = 0; i <= 7 ; i++)
+  for (int i = 0; i <=7 ; i++)
   {
     if (testSeq[i] == '0')
     {
@@ -110,10 +110,16 @@ void inputSig(char testSeq[])
       digitalWrite(24, HIGH);
       delay(1);
     }
+    else
+    {
+      digitalWrite(22, LOW);
+      digitalWrite(24, LOW);
+      delay(2);
+    }
   }
-  delayMicroseconds(1);
   digitalWrite(22, LOW);
   digitalWrite(24, LOW);
+  delay(1);
   //turn the phi pulses back on
   REG_PWM_ENA = PWM_ENA_CHID0;
   REG_PWM_ENA = PWM_ENA_CHID1;
@@ -124,14 +130,13 @@ void inputSig(char testSeq[])
 }
 
 void loop() {
-  //inputSig("11101010");
   char calin_i[8];
-  //Serial.println(1);
+  char calin_g[3];
   if (Serial.available() > 0)
   {
     //Serial.println(2);
-    char temp = Serial.read();
-    switch (temp)
+    char cmd = Serial.read();
+    switch (cmd)
     {
       case 'S':
       {
@@ -140,7 +145,26 @@ void loop() {
         Serial.println(N_sample);
         break;
       }
+      case 'G':
+      {
+        for (int i = 0; i < 3; )
+        {
+          if (Serial.available() > 0)
+          {
+            calin_g[i] = Serial.read();
+            if (calin_g[i] == '1')
+              digitalWrite(48 + 2*i, HIGH);
+            else
+              digitalWrite(48 + 2*i, LOW); 
+            i++;
+          }    
+        }
+        calin_g[3] = '\0';
+        Serial.println(calin_g);
+        break;
+      }
       case 'W':
+      {
         for (int i = 0; i <= 7; )
         {
           if (Serial.available() > 0)
@@ -150,28 +174,12 @@ void loop() {
           }
         }
         calin_i[8] = '\0';
-        Serial.println(calin_i);
         inputSig(calin_i);
-        break;
-      case 'G':
-      {
-        for (int i = 0; i < 3; )
-        {
-          if (Serial.available() > 0)
-          {
-            calin_i[i] = Serial.read();
-            i++;
-          }
-          if (calin_i[i] == '1')
-            digitalWrite(48 + i, HIGH);
-          else
-            digitalWrite(48 + i, LOW);
-        }
-        calin_i[3] = '\0';
         Serial.println(calin_i);
         break;
       }
       case 'R':
+      {
         unsigned char buf[N_sample * sizeof(short)];
         for (int i = 0; i < N_sample;)
         {
@@ -187,9 +195,12 @@ void loop() {
         Serial.write(buf, N_sample * sizeof(short));
         Serial.flush();
         break;
+      }
       default:
+      {
         Serial.println("Meow\0");
         break;
+      }
     }
 
   }

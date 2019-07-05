@@ -393,6 +393,7 @@ class Ui_MainWindow(object):
             plot_data.put(0)
             time_queue.put(i-100)
         ani = animation.FuncAnimation(fig, Ui_MainWindow.cont_readout,interval = 10, fargs = (start_time,ax,plot_data,time_queue))
+        plt.autoscale(enable=False,axis='y')
         plt.show()
         
 
@@ -432,8 +433,8 @@ class Ui_MainWindow(object):
             start_time = time.time()
             for j in range(num_repeat):
                 arduino.reset_input_buffer()
-                for x in range(256):
-                    cmd = "W"+str(format(x,'08b'))
+                for x in range(128):
+                    cmd = "W"+str(format(x,'07b'))+"0"
                     arduino.write(cmd.encode())
                     text_browser_msg = "Set calibration to: " + arduino.readline().decode()
                     self.cmd_line_output.append(text_browser_msg)
@@ -445,6 +446,20 @@ class Ui_MainWindow(object):
                     temp = arduino.read(size = 2*N_sample)
                     for i in range(N_sample):
                         output[j][x*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+                    arduino.reset_input_buffer()
+                for x in range(128):
+                    cmd = "W"+str(format(x,'07b'))+"1"
+                    arduino.write(cmd.encode())
+                    text_browser_msg = "Set calibration to: " + arduino.readline().decode()
+                    self.cmd_line_output.append(text_browser_msg)
+                    cmd = "R"
+                    arduino.write(cmd.encode())
+                    time.sleep(0.01)
+                    while not arduino.in_waiting:
+                        pass                 
+                    temp = arduino.read(size = 2*N_sample)
+                    for i in range(N_sample):
+                        output[j][(x+128)*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
                     arduino.reset_input_buffer()
             text_browser_msg = "scan complete"
             self.cmd_line_output.append(text_browser_msg)
