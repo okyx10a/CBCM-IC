@@ -348,13 +348,13 @@ class Ui_MainWindow(object):
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
 
-    #set calibration button handler
+    #actually its set input sequence (older version didn't include the sensing and calibration mode bit)
     def setCalibration(self): 
         try:
             global arduino
             global N_sample
             arduino.reset_input_buffer()
-            if isBinaryString(self.cal_input.text()) and len(self.cal_input.text())==7:
+            if isBinaryString(self.cal_input.text()) and len(self.cal_input.text())==8:
                 cmd = "W" + self.cal_input.text()
                 arduino.write(cmd.encode())
                 text_browser_msg = "Set calibration to: " + arduino.readline().decode()
@@ -366,7 +366,7 @@ class Ui_MainWindow(object):
                 self.set_cal_button.clicked.connect(self.stop)
                 
             else:
-                text_browser_msg = "Please input a 7-bit binary string as calibration sequence.\nCalibration not set"
+                text_browser_msg = "Please input a 8-bit binary string as input sequence.\nCalibration not set"
                 self.cmd_line_output.append(text_browser_msg)
         except Exception as ex:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
@@ -393,6 +393,7 @@ class Ui_MainWindow(object):
             plot_data.put(0)
             time_queue.put(i-100)
         ani = animation.FuncAnimation(fig, Ui_MainWindow.cont_readout,interval = 10, fargs = (start_time,ax,plot_data,time_queue))
+        plt.autoscale(enable=False,axis='y')
         plt.show()
         
 
@@ -428,12 +429,12 @@ class Ui_MainWindow(object):
             global arduino
             global N_sample   
             num_repeat = int(self.lineEdit.text())
-            output = [[None]*128*N_sample for _ in range(num_repeat)]
+            output = [[None]*256*N_sample for _ in range(num_repeat)]
             start_time = time.time()
             for j in range(num_repeat):
                 arduino.reset_input_buffer()
                 for x in range(128):
-                    cmd = "W"+str(format(x,'07b'))
+                    cmd = "W"+str(format(x,'07b'))+"0"
                     arduino.write(cmd.encode())
                     text_browser_msg = "Set calibration to: " + arduino.readline().decode()
                     self.cmd_line_output.append(text_browser_msg)
@@ -446,14 +447,28 @@ class Ui_MainWindow(object):
                     for i in range(N_sample):
                         output[j][x*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
                     arduino.reset_input_buffer()
+                for x in range(128):
+                    cmd = "W"+str(format(x,'07b'))+"1"
+                    arduino.write(cmd.encode())
+                    text_browser_msg = "Set calibration to: " + arduino.readline().decode()
+                    self.cmd_line_output.append(text_browser_msg)
+                    cmd = "R"
+                    arduino.write(cmd.encode())
+                    time.sleep(0.01)
+                    while not arduino.in_waiting:
+                        pass                 
+                    temp = arduino.read(size = 2*N_sample)
+                    for i in range(N_sample):
+                        output[j][(x+128)*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+                    arduino.reset_input_buffer()
             text_browser_msg = "scan complete"
             self.cmd_line_output.append(text_browser_msg)
             time_spent = time.time()-start_time
             text_browser_msg = "time spent:" + str(time_spent) + "s"
             self.cmd_line_output.append(text_browser_msg)
-            result = [[None]*128 for _ in range(num_repeat)]
+            result = [[None]*256 for _ in range(num_repeat)]
             for j in range(num_repeat):
-                for i in range(128):
+                for i in range(256):
                     result[j][i] = sum(output[j][i*N_sample:i*N_sample+N_sample])/N_sample
             for i in range(num_repeat):
                 plt.plot(result[i])

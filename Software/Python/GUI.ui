@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>656</width>
-    <height>731</height>
+    <height>715</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -104,7 +104,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="logo">
+         <widget class="QLabel" name="logo_2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -185,7 +185,25 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="port_input"/>
+               <widget class="QLineEdit" name="port_input">
+                <property name="text">
+                 <string>COM5</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="baudrate_label">
+                <property name="text">
+                 <string>Baudrate=</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="baudrate_input">
+                <property name="text">
+                 <string>115200</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QLabel" name="timeout_label">
@@ -195,7 +213,11 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="timeout_input"/>
+               <widget class="QLineEdit" name="timeout_input">
+                <property name="text">
+                 <string>5</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
@@ -222,7 +244,11 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="num_samp_input"/>
+               <widget class="QLineEdit" name="num_samp_input">
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QLabel" name="res_CCO_label">
@@ -308,7 +334,11 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="cal_input"/>
+             <widget class="QLineEdit" name="cal_input">
+              <property name="text">
+               <string>11111111</string>
+              </property>
+             </widget>
             </item>
             <item>
              <widget class="QPushButton" name="set_cal_button">
@@ -362,14 +392,28 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout">
               <item>
-               <widget class="QLabel" name="Repeat_label">
+               <widget class="QLabel" name="cs_bit">
+                <property name="text">
+                 <string>Cs bit:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="cs_bit_input"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="repeat_label">
                 <property name="text">
                  <string>Number of times to repeat:</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit"/>
+               <widget class="QLineEdit" name="repeat_input">
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
