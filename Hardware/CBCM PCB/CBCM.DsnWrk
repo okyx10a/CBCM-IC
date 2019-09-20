@@ -1,6 +1,0 @@
-[ProjectGroup]
-Version=1.0
-[Project1]
-ProjectPath=..\Arduino due\Arduino_DUE_V02b_2013_03-22\Arduino_Due.PrjPCB
-[Project2]
-ProjectPath=CBCM test PCB.PrjPCB
