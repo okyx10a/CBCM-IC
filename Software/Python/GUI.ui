@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>656</width>
-    <height>715</height>
+    <height>782</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -89,14 +89,20 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>12</pointsize>
+            <family>Arial Black</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="locale">
            <locale language="English" country="Canada"/>
           </property>
           <property name="text">
-           <string>BioSA, E.Ghafar-Zadeh, K.Qiao</string>
+           <string>Hamed Osouli
+ Kuanghua Qiao
+ Ebrahim Gafar-Zadeh
+      </string>
           </property>
           <property name="alignment">
            <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -145,7 +151,7 @@
          <enum>QTabWidget::West</enum>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <property name="iconSize">
          <size>
@@ -352,6 +358,9 @@
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
@@ -359,6 +368,16 @@
                </size>
               </property>
              </spacer>
+            </item>
+            <item>
+             <widget class="MplWidget" name="RT_plot" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -431,17 +450,45 @@
              </widget>
             </item>
             <item>
-             <spacer name="verticalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="rep_interval">
+                <property name="text">
+                 <string>Repeat interval(s):</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="rep_interval_input"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="repeat2_label">
+                <property name="text">
+                 <string>Number of times to repeat:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="repeat2_input"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chemical_bio_test">
+              <property name="text">
+               <string>Chemical/Bio test</string>
               </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
+             </widget>
+            </item>
+            <item>
+             <widget class="MplWidget" name="Scan_Plot" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
               </property>
-             </spacer>
+             </widget>
             </item>
            </layout>
           </item>
@@ -475,6 +522,14 @@
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MplWidget</class>
+   <extends>QWidget</extends>
+   <header>mplwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

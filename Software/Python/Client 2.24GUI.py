@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'GUI.ui'
-#
-# Created by: PyQt5 UI code generator 5.11.3
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 import serial
 import time
@@ -97,7 +89,13 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
-
+    #
+    #
+    #
+    #
+    #
+    #
+    #
     #actually its set input sequence (older version didn't include the sensing and calibration mode bit)
     def setCalibration(self): 
         try:
@@ -172,6 +170,17 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
         for item in output:
             f.write("%s\n" % item)
         f.close()
+    ################################################
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    
+
             
     #scan calibration button handler
     def scanCalibration(self):
