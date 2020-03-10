@@ -20,7 +20,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 
-arduino = None
+
 
 
 
@@ -28,8 +28,8 @@ arduino = None
 
 class CBCM_MainWindow(QtWidgets.QMainWindow):
     
-    global N_sample
-    N_sample = 1000
+
+
     
     
     def __init__(self):
@@ -41,6 +41,10 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
         self.set_cal_button.clicked.connect(self.setCalibration)# connect set calibration button handler
         self.start_scan_botton.clicked.connect(self.scanCalibration)# connect scan calibration button handler
         self.chemical_bio_test.clicked.connect(self.testScan)# connect chemical_bio_test button handler
+
+        self.arduino = None
+        self.samples = 1000
+
         
     #open port button handler
     def openPort(self):
@@ -49,9 +53,8 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
             p_name = self.port_input.text()   
             b_rate = int(self.baudrate_input.text())   
             t_out = int(self.timeout_input.text())
-            global arduino
-            arduino = serial.Serial(p_name,baudrate = b_rate, timeout = t_out, writeTimeout = 5)
-            text_browser_msg = "port opened on " + arduino.name + "\n"
+            self.arduino = serial.Serial(p_name,baudrate = 115200, timeout = 5, writeTimeout = 5)
+            text_browser_msg = "port opened on " + self.arduino.name + "\n"
             self.cmd_line_output.append(text_browser_msg)
             #change button to let it close port
             self.open_port_button.clicked.disconnect()# connect close port button handler
@@ -66,8 +69,7 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
     #close port button handler
     def closePort(self):
         try:
-            global arduino
-            arduino.close()
+            self.arduino.close()
             text_browser_msg = "port closed\n"
             self.cmd_line_output.append(text_browser_msg)
             self.open_port_button.clicked.disconnect()
@@ -81,22 +83,20 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
     #set parameter button handler
     def setParameter(self):
         try:
-            global arduino
-            global N_sample
-            arduino.reset_input_buffer()
+            self.arduino.reset_input_buffer()
             if isBinaryString(self.res_CCO_input.text()) and len(self.res_CCO_input.text())==3: 
                 cmd = "G"+self.res_CCO_input.text()
-                arduino.write(cmd.encode())
-                text_browser_msg = "The CCO resolution configuration is: " + arduino.readline().decode()
+                self.arduino.write(cmd.encode())
+                text_browser_msg = "The CCO resolution configuration is: " + self.arduino.readline().decode()
                 self.cmd_line_output.append(text_browser_msg)
             else:
                 text_browser_msg = "Please input a 3-bit binary string as CCO resolution.\nCCO resolution not set"
                 self.cmd_line_output.append(text_browser_msg)
             if int(self.num_samp_input.text())<2048 and int(self.num_samp_input.text())>0:
                 cmd = "S" + self.num_samp_input.text() + "\0"
-                N_sample = int(self.num_samp_input.text())
-                arduino.write(cmd.encode())       
-                text_browser_msg = "The number of samples for each calibration input is: " + arduino.readline().decode()
+                self.N_sample = int(self.num_samp_input.text())
+                self.arduino.write(cmd.encode())       
+                text_browser_msg = "The number of samples for each calibration input is: " + self.arduino.readline().decode()
                 self.cmd_line_output.append(text_browser_msg)
             else:
                 text_browser_msg = "Please input an integer between 0 and 2048 as the number of samples.\nNumber of samples not set"
@@ -109,13 +109,11 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
     #RT-plot section
     def setCalibration(self): 
         try:
-            global arduino
-            global N_sample
-            arduino.reset_input_buffer()
+            self.arduino.reset_input_buffer()
             if isBinaryString(self.cal_input.text()) and len(self.cal_input.text())==8:
                 cmd = "W" + self.cal_input.text()
-                arduino.write(cmd.encode())
-                text_browser_msg = "Set calibration to: " + arduino.readline().decode()
+                self.arduino.write(cmd.encode())
+                text_browser_msg = "Set calibration to: " + self.arduino.readline().decode()
                 self.cmd_line_output.append(text_browser_msg)
                 self.set_cal_button.setText("Stop")
                 self.set_cal_button.clicked.disconnect(self.setCalibration)
@@ -133,35 +131,33 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
     #scan calibration button handler
     def scanCalibration(self):
         try:
-            #self.start_scan_botton.setEnabled(False)
-            global arduino
-            global N_sample   
+            #self.start_scan_botton.setEnabled(False)   
             num_repeat = int(self.repeat_input.text())
             cs_bit = self.cs_bit_input.text()
             if not isBinaryString(cs_bit):
                 cs_bit = ' '
-            output = [[None]*128*N_sample for _ in range(num_repeat)]
+            output = [[None]*128*self.N_sample for _ in range(num_repeat)]
             start_time = time.time()
             for j in range(num_repeat):
-                arduino.reset_input_buffer()
+                self.arduino.reset_input_buffer()
                 for x in range(128):
                     #arduino.reset_input_buffer()
                     cmd = "W"+str(format(x,'07b'))+cs_bit
-                    arduino.write(cmd.encode())
+                    self.arduino.write(cmd.encode())
                     #time.sleep(0.03)
-                    text_browser_msg = "Set calibration to: " + arduino.readline().decode()
+                    text_browser_msg = "Set calibration to: " + self.arduino.readline().decode()
                     # the above line ensures the arduino has finished writing the calibration sequence
                     self.cmd_line_output.append(text_browser_msg)
                     #time.sleep(0.01)
                     cmd = "R"
-                    arduino.write(cmd.encode())
+                    self.arduino.write(cmd.encode())
                     #time.sleep(0.01)
-                    while not arduino.in_waiting:
+                    while not self.arduino.in_waiting:
                         pass                 
-                    temp = arduino.read(size = 2*N_sample)
-                    for i in range(N_sample):
-                        output[j][x*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-                    arduino.reset_input_buffer()
+                    temp = self.arduino.read(size = 2*self.N_sample)
+                    for i in range(self.N_sample):
+                        output[j][x*self.N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+                    self.arduino.reset_input_buffer()
             text_browser_msg = "scan complete"
             self.cmd_line_output.append(text_browser_msg)
             time_spent = time.time()-start_time
@@ -170,7 +166,7 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
             result = [[None]*128 for _ in range(num_repeat)]
             for j in range(num_repeat):
                 for i in range(128):
-                    result[j][i] = sum(output[j][i*N_sample:i*N_sample+N_sample])/N_sample
+                    result[j][i] = sum(output[j][i*self.N_sample:i*self.N_sample+self.N_sample])/self.N_sample
             for i in range(num_repeat):
                 plt.plot(result[i])
             plt.show()
@@ -199,64 +195,51 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
 
+            
+
     def testScan(self):
         try:
-            global arduino
-            global N_sample
             num_repeat = int(self.repeat2_input.text())
             rep_interval = int(self.rep_interval_input.text())
-            output_left = [[None]*128*N_sample for _ in range(num_repeat)]
-            output_right = [[None]*128*N_sample for _ in range(num_repeat)]
+            output_left = [[None]*128*self.N_sample for _ in range(num_repeat)]
+            output_right = [[None]*128*self.N_sample for _ in range(num_repeat)]
             start_time = time.time()
-            arduino.reset_input_buffer()
+            self.arduino.reset_input_buffer()
             for j in range(num_repeat):
                 try:
                     #scanning left side
-                    arduino.reset_input_buffer()
+                    self.arduino.reset_input_buffer()
                     for x in range(128):
-                        #arduino.reset_input_buffer()
                         cmd = "W"+str(format(x,'07b'))+ " "
-                        arduino.write(cmd.encode())
-                        #time.sleep(0.03)
-                        text_browser_msg = "Set calibration to: " + arduino.readline().decode()
-                        # the above line ensures the arduino has finished writing the calibration sequence
-                        #self.cmd_line_output.append(text_browser_msg)
-                        #time.sleep(0.01)
+                        self.arduino.write(cmd.encode())
+                        text_browser_msg = "Set calibration to: " + self.arduino.readline().decode()
                         cmd = "R"
-                        arduino.write(cmd.encode())
-                        #time.sleep(0.01)
-                        while not arduino.in_waiting:
+                        self.arduino.write(cmd.encode())
+                        while not self.arduino.in_waiting:
                             pass                 
-                        temp = arduino.read(size = 2*N_sample)
-                        for i in range(N_sample):
-                            output_left[j][x*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-                        arduino.reset_input_buffer()
+                        temp = self.arduino.read(size = 2*self.N_sample)
+                        for i in range(self.N_sample):
+                            output_left[j][x*self.N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+                        self.arduino.reset_input_buffer()
                 except SerialTimeoutException as ex:
-                        output_left[j][x*N_sample+i] = 0
+                        output_left[j][x*self.N_sample+i] = 0
 
                 try:
-                    #scanning right side
-                    arduino.reset_input_buffer()
+                    self.arduino.reset_input_buffer()
                     for x in range(128):
-                        #arduino.reset_input_buffer()
                         cmd = "W"+str(format(x,'07b'))+ "1"
-                        arduino.write(cmd.encode())
-                        #time.sleep(0.03)
-                        text_browser_msg = "Set calibration to: " + arduino.readline().decode()
-                        # the above line ensures the arduino has finished writing the calibration sequence
-                        #self.cmd_line_output.append(text_browser_msg)
-                        #time.sleep(0.01)
+                        self.arduino.write(cmd.encode())
+                        text_browser_msg = "Set calibration to: " + self.arduino.readline().decode()
                         cmd = "R"
-                        arduino.write(cmd.encode())
-                        #time.sleep(0.01)
-                        while not arduino.in_waiting:
+                        self.arduino.write(cmd.encode())
+                        while not self.arduino.in_waiting:
                             pass                 
-                        temp = arduino.read(size = 2*N_sample)
-                        for i in range(N_sample):
-                            output_right[j][x*N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
-                        arduino.reset_input_buffer()
+                        temp = self.arduino.read(size = 2*self.N_sample)
+                        for i in range(self.N_sample):
+                            output_right[j][x*self.N_sample+i] = int.from_bytes( temp[2*i:2*i+2], byteorder='big')
+                        self.arduino.reset_input_buffer()
                 except SerialTimeoutException as ex:
-                    output_right[j][x*N_sample+i] = 0
+                    output_right[j][x*self.N_sample+i] = 0
                     
                 time.sleep(rep_interval)
             text_browser_msg = "scan complete"
@@ -268,10 +251,10 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
             result_right = [[None]*128 for _ in range(num_repeat)]
             for j in range(num_repeat):
                 for i in range(128):
-                    result_left[j][i] = sum(output_left[j][i*N_sample:i*N_sample+N_sample])/N_sample
+                    result_left[j][i] = sum(output_left[j][i*self.N_sample:i*self.N_sample+self.N_sample])/self.N_sample
             for j in range(num_repeat):
                 for i in range(128):
-                    result_right[j][i] = sum(output_right[j][i*N_sample:i*N_sample+N_sample])/N_sample
+                    result_right[j][i] = sum(output_right[j][i*self.N_sample:i*self.N_sample+self.N_sample])/self.N_sample
             for i in range(num_repeat):
                 plt.plot(result_left[i])
             for i in range(num_repeat):
@@ -300,6 +283,11 @@ class CBCM_MainWindow(QtWidgets.QMainWindow):
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             text_browser_msg = template.format(type(ex).__name__, ex.args)
             self.cmd_line_output.append(text_browser_msg)
+
+    def cleanUp():
+        if self.arduino != None:
+            self.arduino.close()
+            print("port closed on exit\n")
         
             
             
@@ -326,19 +314,12 @@ def isBinaryString(string):
     else : 
         return False
     
-
-def cleanUp():
-    global arduino
-    if arduino != None:
-        arduino.close()
-        print("port closed on exit\n")
-    
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = CBCM_MainWindow()
     MainWindow.tabWidget.setCurrentIndex(0)
-    app.aboutToQuit.connect(cleanUp)
+    app.aboutToQuit.connect(MainWindow.cleanUp)
     MainWindow.show()
     sys.exit(app.exec_())
 

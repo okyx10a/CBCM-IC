@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>656</width>
-    <height>782</height>
+    <height>932</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,7 +75,7 @@
            <enum>Qt::AutoText</enum>
           </property>
           <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
@@ -101,11 +101,10 @@
           <property name="text">
            <string>Hamed Osouli
  Kuanghua Qiao
- Ebrahim Gafar-Zadeh
-      </string>
+ Ebrahim Gafar-Zadeh      </string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
           </property>
          </widget>
         </item>
@@ -127,7 +126,7 @@
            <enum>Qt::RichText</enum>
           </property>
           <property name="pixmap">
-           <pixmap>rsz_3lassonde_300.jpg</pixmap>
+           <pixmap>C:/Users/Owen/.designer/backup/rsz_3lassonde_300.jpg</pixmap>
           </property>
          </widget>
         </item>
@@ -151,7 +150,7 @@
          <enum>QTabWidget::West</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="iconSize">
          <size>
@@ -194,34 +193,6 @@
                <widget class="QLineEdit" name="port_input">
                 <property name="text">
                  <string>COM5</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="baudrate_label">
-                <property name="text">
-                 <string>Baudrate=</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="baudrate_input">
-                <property name="text">
-                 <string>115200</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="timeout_label">
-                <property name="text">
-                 <string>Timeout =</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="timeout_input">
-                <property name="text">
-                 <string>5</string>
                 </property>
                </widget>
               </item>
