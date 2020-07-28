@@ -6,3 +6,5 @@ ProjectPath=CBCM PCB\CBCM test PCB.PrjPCB
 ProjectPath=CBCM mini\CBCM mini.PrjPCB
 [Project3]
 ProjectPath=CBCM PCB Rev1\CBCM PCB Rev 1.PrjPCB
+[Project4]
+ProjectPath=Arduino_DUE_V02b_2013_03-22\Arduino_Due.PrjPCB

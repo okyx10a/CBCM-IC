@@ -1,0 +1,33 @@
+PCB:
+
+1-      We delete the redundant parts and only keep the following:
+
+-          Chip Socket
+
+-          Arduino Due Board
+
+-          Voltage Regulators
+
+ 
+
+2-      We make the following changes:
+
+-          Add decoupling capacitor between Vdd and GND of input power jack, 3 capacitors in parallel, 10uF, 47uF, 100uF.
+
+-          Add decoupling capacitors as close as possible to the chip between AVin and DVin and GND 0.1uF
+
+-          Connect the Analog GND and digital GND and the GND of MCU using the large ground plate
+
+-          Use voltage regulators of a fixed output (current version is an adjustable output that requires using precision capacitors and resistors)
+
+-          Fix the wiring problem between the GND and Vref of the right side
+
+-          Add one analog MUX (2 to 1) to measure both sides data 
+
+-          //Leave only one reference voltage and add a 100uf decoupling cap to it
+
+-          New regulators will still need 3 decoulping capacitors 0.1uF, 1uF, 10uF in parallel
+
+-          For 10uF and 47uF capacitors the most commom land size will be 4.3mm by 4.3mm as for the 100uF ones the most common size will be 6.6mm by 6.6mm
+
+-          Keep 2mm margin from the edge
