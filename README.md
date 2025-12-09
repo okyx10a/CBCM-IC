@@ -2,9 +2,9 @@
 **Full-stack mixed-signal test fixture for Charge-Based Capacitance Measurement ICs**  
 Designed, fabricated, and validated at York University (2018–2019)
 
-(photos/0.jpg)
-(photos/1.jpg)
-(photos/2.jpg)
+![Test board](Photos/0.jpg)
+![Test board](Photos/1.jpg)
+![Test board](Photos/2.jpg)
 *4-layer mixed-signal test board with separated analog/digital ground planes*
 
 ## Why This Project Matters for Employers
