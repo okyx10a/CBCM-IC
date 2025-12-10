@@ -2,14 +2,10 @@
 **Full-stack mixed-signal test fixture for Charge-Based Capacitance Measurement ICs**  
 Designed, fabricated, and validated at York University (2018–2019)
 
-![Test board](CBCM-IC/Photos/0.JPGE)
-![Test board](CBCM-IC/Photos/1.JPGE)
-![Test board](CBCM-IC/Photos/2.JPG)
+![Test board](Photos/0.JPGE)
+(Photos/1.JPGE)
+(Photos/2.JPG)
 *4-layer mixed-signal test board with separated analog/digital ground planes*
-
-## Why This Project Matters for Employers
-- Complete ownership: schematic → layout → fabrication → assembly → bring-up → automated testing
-- Real-world mixed-signal challenges solved: ground separation, SPI
 
 ## Key Features
 - 4-layer KiCad design with proper analog/digital ground splitting 
