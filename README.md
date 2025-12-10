@@ -3,8 +3,8 @@
 Designed, fabricated, and validated at York University (2018–2019)
 
 ![Test board](Photos/0.JPGE)
-(Photos/1.JPGE)
-(Photos/2.JPG)
+![Test board](Photos/1.JPGE)
+![Test board](Photos/2.JPG)
 *4-layer mixed-signal test board with separated analog/digital ground planes*
 
 ## Key Features
