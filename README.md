@@ -2,19 +2,19 @@
 **Full-stack mixed-signal test fixture for Charge-Based Capacitance Measurement ICs**  
 Designed, fabricated, and validated at York University (2018–2019)
 
-(Photos/0.JPEG)
-(Photos/1.JPEG)
-(Photos/2.JPEG)
-(Photos/3.JPEG)
+![0](Photos/0.JPEG)
+![1](Photos/1.JPEG)
+![2](Photos/2.JPEG)
+![3](Photos/3.JPEG)
 *4-layer mixed-signal test board with separated analog/digital ground planes*
 
 ## Directory Structure
-├── Hardware/                       → Altium project
-├── Software/                       → Arduino code + PyQt GUI
-├── Photos/                         → Assembly
-├── Test results/                   → Raw data and measurement data
-├── CBCM project summery.docx       → Test fixture construction explanation
-├── Tools chain setup.txt           → Note for succeeding developer
+├── Hardware/                       → Altium project  
+├── Software/                       → Arduino code + PyQt GUI  
+├── Photos/                         → Assembly  
+├── Test results/                   → Raw data and measurement data  
+├── CBCM project summery.docx       → Test fixture construction explanation  
+├── Tools chain setup.txt           → Note for succeeding developer  
 └── README.md
 
 ## Key Features
